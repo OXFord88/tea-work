@@ -1,0 +1,4 @@
+<!--pages/message/index.wxml-->
+<view class='papeTape'>
+  <text>this is message page</text>
+</view>

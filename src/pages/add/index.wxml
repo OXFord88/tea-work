@@ -1,0 +1,3 @@
+<!--pages/add/index.wxml-->
+<text>pages/add/index.wxml</text>
+<view>{{name}}</view>

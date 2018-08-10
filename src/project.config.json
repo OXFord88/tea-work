@@ -1,0 +1,64 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wxb0c2665eadb949cf",
+	"projectname": "tea-work",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "发表",
+					"pathName": "pages/add/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "纸条",
+					"pathName": "pages/message/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "喜欢",
+					"pathName": "pages/like/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wo",
+					"pathName": "pages/user/index"
+				}
+			]
+		}
+	}
+}

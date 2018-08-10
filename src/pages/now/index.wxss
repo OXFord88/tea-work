@@ -1,0 +1,45 @@
+/* pages/now/index.wxss */
+.disFlex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}
+.nowInfo view {
+  background: rgba(0,0,0,0.08);
+  border-radius: 100rpx;
+  font-size: 20rpx;
+  color: #432617;
+  text-align: center;
+  line-height: 20rpx;
+  padding: 10rpx 16rpx;
+}
+.dot text {
+  color: #432617
+}
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardInfo .imgBox {
+  width: 100%;
+}
+.imgBox image {
+  width: 100%;
+  border-radius: 8rpx;
+}
+.mt4 {
+  margin-top: 8rpx;
+}
+.showAll {
+  font-size: 28rpx;
+  color: #6EA4D3;
+  line-height: 42rpx;
+}
+.time {
+  font-size: 24rpx;
+}
+.pt42 {
+  padding-top: 100rpx;
+  margin-bottom: 0rpx;
+}

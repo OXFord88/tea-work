@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/now/index",
+    "pages/message/index",
+    "pages/add/index",
+    "pages/like/index",
+    "pages/user/index"
+  ],
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/now/index",
+        "text": "此刻",
+        "iconPath": "images/now.png",
+        "selectedIconPath": "images/now2.png"
+      },
+      {
+        "pagePath": "pages/message/index",
+        "text": "纸条",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message2.png"
+      },
+      {
+        "pagePath": "pages/add/index",
+        "iconPath": "images/add.png"
+      },
+      {
+        "pagePath": "pages/like/index",
+        "text": "喜欢",
+        "iconPath": "images/like.png",
+        "selectedIconPath": "images/like2.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me2.png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "茶布",
+    "navigationBarTextStyle":"black"
+  }
+}
