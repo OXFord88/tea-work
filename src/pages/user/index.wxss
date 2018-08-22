@@ -1,1 +1,112 @@
-/* pages/user/index.wxss */
+.user-wrapper {
+  font-size: 28rpx;
+}
+.user-wrapper .user-info {
+  display: flex;
+  padding: 32rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50rpx;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.user-wrapper .user-left image {
+  width: 64rpx;
+  height: 64rpx;
+  background: #eee;
+  border-radius: 64rpx;
+  margin-right: 16rpx;
+}
+.user-wrapper .user-left .pos-rea {
+  position: relative;
+}
+.user-wrapper .user-left .pos-rea .pos-abs {
+  font-size: 18rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 4rpx;
+  left: 40rpx;
+}
+.user-wrapper .user-left .pos-rea .pos-abs.bg {
+  width: 24rpx;
+  height: 24rpx;
+  background: #FC6620;
+  border-radius: 24rpx;
+  left: 38rpx;
+}
+.user-wrapper .my-now {
+  padding: 0 32rpx;
+  position: relative;
+}
+.user-wrapper .my-now .left-border {
+  position: absolute;
+  height: 100%;
+  border-left: 2rpx solid #d8d8d8;
+  left: 60rpx;
+  top: 0;
+  z-index: -1;
+}
+.user-wrapper .my-now .title {
+  padding-top: 32rpx;
+  padding-left: 44rpx;
+  position: relative;
+}
+.user-wrapper .my-now .title:after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 24rpx;
+  top: 40rpx;
+  width: 12rpx;
+  height: 12rpx;
+  background: #333;
+  border-radius: 12rpx;
+}
+.user-wrapper .fs10 {
+  font-size: 20rpx;
+}
+.user-wrapper .fs12 {
+  font-size: 24rpx;
+}
+.user-wrapper .disFlex {
+  display: flex;
+}
+.user-wrapper .col15 {
+  color: #151515;
+}
+.user-wrapper .like-list {
+  background: #FFF8ED;
+  border-radius: 8rpx;
+  height: 250rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin-top: 12rpx;
+}
+.user-wrapper .like-list image {
+  height: 126rpx;
+  width: 190rpx;
+  border-radius: 8rpx;
+}
+.user-wrapper .like-list image.img-auto {
+  width: auto;
+  height: auto;
+}
+.user-wrapper .like-list .content {
+  color: #333;
+  font-size: 27rpx;
+  line-heihgt: 42rpx;
+}
+.user-wrapper .iconfont {
+  font-size: 24rpx;
+}
+.user-wrapper .h63 {
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.user-wrapper .space-betwn {
+  justify-content: space-between;
+}
+.user-wrapper .ml20 {
+  margin-left: 40rpx;
+}

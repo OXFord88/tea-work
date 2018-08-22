@@ -1,0 +1,82 @@
+.paperTape {
+  padding: 32rpx;
+  background: #f6f7f8;
+  font-size: 24rpx;
+  min-height: 100%;
+  position: relative;
+}
+.paperTape .recomment {
+  background: #fff;
+  padding: 32rpx;
+  border-left: 4px solid #7AC4B4;
+  box-sizing: border-box;
+}
+.paperTape .recomment view {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #000;
+}
+.paperTape .recomment view.title {
+  line-height: 28rpx;
+}
+.paperTape .recomment view.userName {
+  font-weight: bold;
+}
+.paperTape .recomment view.content {
+  margin: 12rpx 0;
+}
+.paperTape .recomment view .iconfont {
+  font-size: 24rpx;
+}
+.paperTape .recomment .nowLink {
+  font-size: 20rpx;
+  color: #6EA4D3;
+}
+.paperTape .getPapeTitle {
+  padding: 32rpx 0 22rpx 0;
+}
+.paperTape .getPapeList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.paperTape .getPapeList > view {
+  width: 332rpx;
+  background: #fff;
+  height: 442rpx;
+  padding: 32rpx 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.paperTape .getPapeList .disflex {
+  display: flex;
+  justify-content: space-between;
+}
+.paperTape .getPapeList .content {
+  font-size: 28rpx;
+  line-height: 42rpx;
+  height: 210rpx;
+  align-items: center;
+  display: flex;
+}
+.paperTape .getPapeList .mt34 {
+  margin-top: 68rpx;
+}
+.paperTape .getPapeList .textRight {
+  text-align: right;
+}
+.paperTape .pasterBtn {
+  position: fixed;
+  bottom: 34rpx;
+  text-align: center;
+  left: 0;
+  width: 100%;
+}
+.paperTape .pasterBtn text {
+  display: inline-block;
+  padding: 22rpx 64rpx;
+  background: #4ABEBA;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 28rpx;
+}

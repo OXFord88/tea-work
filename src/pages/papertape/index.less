@@ -1,0 +1,82 @@
+.paperTape {
+  padding: 32rpx;
+  background: #f6f7f8;
+  font-size: 24rpx;
+  min-height: 100%;
+  position: relative;
+  .recomment {
+    background: #fff;
+    padding: 32rpx;
+    border-left: 4px solid #7AC4B4;
+    box-sizing: border-box;
+    view {
+      font-size: 24rpx;
+      line-height: 36rpx;
+      color: #000;
+      &.title {
+        line-height: 28rpx;
+      }
+      &.userName {
+        font-weight: bold;
+      }
+      &.content {
+        margin: 12rpx 0;
+      }
+      .iconfont {
+        font-size: 24rpx;
+      }
+    }
+    .nowLink {
+      font-size: 20rpx;
+      color: #6EA4D3;
+    }
+  }
+  .getPapeTitle {
+    padding: 32rpx 0 22rpx 0;
+  }
+  .getPapeList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & > view {
+      width: 166*2rpx;
+      background: #fff;
+      height: 221*2rpx;
+      padding: 32rpx 20rpx;
+      box-sizing: border-box;
+      margin-bottom: 22rpx;
+    }
+    .disflex {
+      display: flex;
+      justify-content: space-between;
+    }
+    .content {
+      font-size: 28rpx;
+      line-height: 42rpx;
+      height: 105*2rpx;
+      align-items: center;
+      display: flex;
+    }
+    .mt34 {
+      margin-top: 34*2rpx;
+    }
+    .textRight {
+      text-align: right;
+    }
+  }
+  .pasterBtn {
+    position: fixed;
+    bottom: 17*2rpx;
+    text-align: center;
+    left: 0;
+    width: 100%;
+    text {
+      display: inline-block;
+      padding: 22rpx 64rpx;
+      background: #4ABEBA;
+      border-radius: 100px;
+      color: #fff;
+      font-size: 28rpx;
+    }
+  }
+}

@@ -1,17 +1,19 @@
-<view class="user-wrapper">
-  <view class="user-info">
-    <view class="user-left disFlex">
-      <view class="pos-rea">
-        <image src="{{userInfo.imgUrl}}"></image>
-        <view class="pos-abs bg"></view>
-        <icon class="iconfont icon-xingbie-nv pos-abs"></icon>
-      </view>
-      <view>
-        <view>{{userInfo.userName}}</view>
-        <text class="col666 fs10">{{userInfo.city}} 在茶布生活了 <text class="col15">{{userInfo.days}}</text> 天，<text class="col15">{{userInfo.visits}}</text> 名访客</text>
-      </view>
+<!--pages/userInfo/index.wxml-->
+<view class="userInfo-wrapper">
+  <view class='userInfo-title'>
+    <view class='touxiang'>
+      <image src='../../images/icon.jpg'></image>
+      <view class="bg pos-abs"></view>
+      <icon class='iconfont icon-xingbie-nv pos-abs'></icon>
     </view>
-    <text class="colblue fs12">个人资料 ></text>
+    <view class="col333 fs16 mb16">{{userInfo.userName}}</view>
+    <view class="col666">{{userInfo.city}} {{userInfo.school}}</view>
+    <view class="col666 mt8">
+      在茶布生活了 
+      <text class='col15'>{{userInfo.days}}</text> 
+      天，
+      <text class='col15'>{{userInfo.visits}} </text>名访客
+    </view>
   </view>
   <view class="my-now">
     <view class="left-border"></view>

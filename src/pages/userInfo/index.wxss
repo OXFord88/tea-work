@@ -1,0 +1,107 @@
+.userInfo-wrapper .my-now {
+  padding: 0 32rpx;
+  position: relative;
+}
+.userInfo-wrapper .my-now .left-border {
+  position: absolute;
+  height: 100%;
+  border-left: 2rpx solid #d8d8d8;
+  left: 60rpx;
+  top: 0;
+  z-index: -1;
+}
+.userInfo-wrapper .my-now .title {
+  padding-top: 32rpx;
+  padding-left: 44rpx;
+  position: relative;
+}
+.userInfo-wrapper .my-now .title:after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 24rpx;
+  top: 40rpx;
+  width: 12rpx;
+  height: 12rpx;
+  background: #333;
+  border-radius: 12rpx;
+}
+.userInfo-wrapper .disFlex {
+  display: flex;
+}
+.userInfo-wrapper .col15 {
+  color: #151515;
+}
+.userInfo-wrapper .like-list {
+  background: #FFF8ED;
+  border-radius: 8rpx;
+  height: 250rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin-top: 12rpx;
+}
+.userInfo-wrapper .like-list image {
+  height: 126rpx;
+  width: 190rpx;
+  border-radius: 8rpx;
+}
+.userInfo-wrapper .like-list image.img-auto {
+  width: auto;
+  height: auto;
+}
+.userInfo-wrapper .like-list .content {
+  color: #333;
+  font-size: 27rpx;
+  line-heihgt: 42rpx;
+}
+.userInfo-wrapper .iconfont {
+  font-size: 24rpx;
+}
+.userInfo-wrapper .h63 {
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.userInfo-wrapper .space-betwn {
+  justify-content: space-between;
+}
+.userInfo-wrapper .ml20 {
+  margin-left: 40rpx;
+}
+.userInfo-wrapper .userInfo-title {
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom: 80rpx;
+  padding-top: 32rpx;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.userInfo-wrapper .userInfo-title image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 126rpx;
+}
+.userInfo-wrapper .touxiang {
+  position: relative;
+}
+.userInfo-wrapper .touxiang .pos-abs {
+  position: absolute;
+  right: 320rpx;
+  bottom: 0;
+}
+.userInfo-wrapper .touxiang .bg {
+  background: #FC6620;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 32rpx;
+  right: 318rpx;
+}
+.userInfo-wrapper .touxiang .iconfont {
+  color: #fff;
+}
+.userInfo-wrapper .mt8 {
+  margin-top: 16rpx;
+}
+.userInfo-wrapper .mb16 {
+  margin-bottom: 32rpx;
+}

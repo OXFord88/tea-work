@@ -1,1 +1,19 @@
-/* pages/add/index.wxss */
+.add-wrapper {
+  padding: 32rpx;
+}
+.add-wrapper .edit-box {
+  background: #F6F7F8;
+  border-radius: 16rpx;
+  padding: 48rpx;
+}
+.add-wrapper .touxiang-box {
+  width: 590rpx;
+  height: 394rpx;
+  background: #fff;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  text-align: center;
+}
+.add-wrapper .touxiang-box view {
+  padding-top: 220rpx;
+}

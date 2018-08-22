@@ -1,1 +1,38 @@
-/* pages/like/index.wxss */
+.like-box {
+  font-size: 24rpx;
+  padding: 32rpx;
+}
+.like-box .title {
+  color: #000;
+}
+.like-box .disflex {
+  display: flex;
+}
+.like-box .like-list {
+  background: #FFF8ED;
+  border-radius: 8rpx;
+  height: 250rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin: 32rpx 0;
+}
+.like-box .like-list image {
+  width: 190rpx;
+  height: 126rpx;
+}
+.like-box .like-list image.img-auto {
+  width: auto;
+  height: auto;
+}
+.like-box .iconfont {
+  font-size: 24rpx;
+}
+.like-box .h63 {
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.like-box .space-betwn {
+  justify-content: space-between;
+}

@@ -1,0 +1,80 @@
+@nvCol: #FD8EB1;
+@nanCol: #21C0FC;
+.register-wrapper {
+  padding: 0 32*2rpx;
+  .header {
+    text-align: center;
+    padding-top: 160rpx;
+    view {
+      line-height: 54rpx;
+    }
+  }
+  image {
+    width: 64*2rpx;
+    height: 64*2rpx;
+    margin-top: 38*2rpx;
+  }
+  .form {
+    .form-list {
+      border-top: 1rpx solid #d8d8d8;
+      height: 48*2rpx;
+      display: flex;
+      align-items: center;
+      &.borderb {
+        border-bottom: 1rpx solid #d8d8d8;
+        margin-bottom: 32rpx;
+      }
+      text {
+        width: 120rpx;
+        color: #000;
+        font-size: 30rpx;
+        margin-right: 32rpx;
+      }
+      input {
+        font-size: 30rpx;
+        line-height: 48*2rpx;
+        width: 400rpx;
+      }
+      .input-place {
+        color: #ccc;
+      }
+      .sex-select {
+        font-size: 26rpx;
+        text {
+          padding: 14rpx 52rpx;
+          border: 1rpx solid #ccc;
+          border-radius: 54rpx;
+        }
+        .nv {
+          color: @nvCol;
+          border-color: @nvCol;
+          &.selected {
+            background: @nvCol;
+            color: #fff;
+          }
+        }
+        .nan {
+          color: @nanCol;
+          border-color: @nanCol;
+          &.selected {
+            background: @nanCol;
+            color: #fff;
+          }
+        }
+      }
+    }
+    button {
+      border: none;
+      background: #A4DEDC;
+      border-radius: 24px;
+      height: 48*2rpx;
+      color: #fff;
+      line-height: 48*2rpx;
+      outline: none;
+      margin-top: 32rpx;
+      &::after {
+        border: none;
+      }
+    }
+  }
+}

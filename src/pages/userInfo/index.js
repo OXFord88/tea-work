@@ -1,21 +1,29 @@
-// pages/like/index.js
+// pages/userInfo/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeNum: 20,
-    likeLists: [{
+    userInfo: {
+      imgUrl: '../../images/icon.jpg',
+      userName: '左撇子',
+      city: '北京',
+      days: 333,
+      visits: 222,
+      six: 1,
+      school: '华北电力大学'
+    },
+    myNowLists: [{
+      num: 33,
+      time: 'xx月xx日 10:00',
       content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      userName: '页面的初始数据',
-      time: '月20日 10:20 ',
       imgUrl: '../../images/icon.jpg'
     }, {
+      num: 33,
+      time: 'xx月xx日 10:00',
       content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      userName: '页面的初始数据',
-      time: '月20日 10:20 ',
-      // imgUrl: '../../images/icon.jpg'
+      imgUrl: ''
     }]
   },
 

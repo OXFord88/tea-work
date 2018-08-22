@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -33,12 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 8,
 			"list": [
 				{
-					"id": -1,
-					"name": "发表",
-					"pathName": "pages/add/index",
+					"id": 0,
+					"name": "此刻",
+					"pathName": "pages/now/index",
 					"query": ""
 				},
 				{
@@ -56,7 +56,38 @@
 				{
 					"id": -1,
 					"name": "wo",
-					"pathName": "pages/user/index"
+					"pathName": "pages/user/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "papertape",
+					"pathName": "pages/papertape/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/userInfo/index",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "此刻list组件",
+					"pathName": "pages/components/nowList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/register/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "add",
+					"pathName": "pages/add/index",
+					"query": ""
 				}
 			]
 		}

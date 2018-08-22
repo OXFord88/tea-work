@@ -1,19 +1,18 @@
-// pages/message/index.js
+// pages/add/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    num: 2,
-    isGet: true,
-    isSend: false,
+    userName: "左撇子也有人抢",
+    num: '66',
+    getPapeTapNum: '88',
+    isUser: false,
     pageLists: [{
-      isNew: true,
       num: 12,
-      content: 'hello hello叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青',
+      content: 'hello hello',
       name: '叶青青',
-      time: 'xx月xx日 xx:xx',
       isCollect: true,
       isZan: true
     }, {
@@ -42,14 +41,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    // wx.getLocation({
+    //   success: function(res) {
+    //     console.log(res)
+    //   },
+    // })
+    wx.request({
+      url: 'https://www.yanlu8.com/chabuweb/diary/getDiaryList',
+      data: {
+        userid: 8
+      },
+      method: "POST",
+      success(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    // console.log(this.data.name)
   },
 
   /**
@@ -85,12 +98,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  toggleTab: function(event) {
-    let str = event.target.id;
-    this.setData({
-      isGet: str === 'get',
-      isSend: str === 'send'
-    })
   }
 })

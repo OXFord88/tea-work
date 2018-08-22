@@ -1,4 +1,16 @@
 /**app.wxss**/
+view, text {
+  font-family: PingFangSC-Medium;
+}
+page {
+  height: 100%;
+}
+
+image {
+  width: auto;
+  height: auto;
+  border: none;
+}
 .container {
   height: 100%;
   display: flex;
@@ -22,6 +34,18 @@
   font-size: 28rpx;
   line-height: 42rpx;
   min-height: 976rpx;
+}
+.fs10 {
+  font-size: 20rpx;
+}
+.fs12 {
+  font-size: 24rpx;
+}
+.fs16 {
+  font-size: 32rpx;
+}
+.col333 {
+  color: #333;
 }
 .col666 {
   color: #666;
@@ -62,3 +86,16 @@
 .icon-xingbie-nv:before { content: "\e616"; }
 
 .icon-gengduo:before { content: "\e778"; }
+
+.icon-xingbie-nv {
+  color: #FC6620;
+}
+.colblue {
+  color: #6EA4D3
+}
+.icon-xin {
+ color: #ccc;
+}
+.icon-xin.zan {
+  color: #FC6620;
+}

@@ -1,22 +1,11 @@
-// pages/like/index.js
+// pages/register/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeNum: 20,
-    likeLists: [{
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      userName: '页面的初始数据',
-      time: '月20日 10:20 ',
-      imgUrl: '../../images/icon.jpg'
-    }, {
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      userName: '页面的初始数据',
-      time: '月20日 10:20 ',
-      // imgUrl: '../../images/icon.jpg'
-    }]
+  
   },
 
   /**

@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    userInfo: {
+      imgUrl: '../../images/icon.jpg',
+      userName: '左撇子',
+      city: '北京',
+      days: 333,
+      visits: 222,
+      six: 1
+    },
+    myNowLists: [{
+      num: 33,
+      time: 'xx月xx日 10:00',
+      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
+      imgUrl: '../../images/icon.jpg'
+    }, {
+      num: 33,
+      time: 'xx月xx日 10:00',
+      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
+      imgUrl: ''
+    }]
   },
 
   /**

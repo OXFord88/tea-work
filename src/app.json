@@ -4,7 +4,10 @@
     "pages/message/index",
     "pages/add/index",
     "pages/like/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/papertape/index",
+    "pages/userInfo/index",
+    "pages/register/index"
   ],
   "tabBar": {
     "color": "#ccc",

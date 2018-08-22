@@ -1,3 +1,8 @@
 <!--pages/add/index.wxml-->
-<text>pages/add/index.wxml</text>
-<view>{{name}}</view>
+<view class="add-wrapper">
+	<view class="edit-box">
+		<view class="touxiang-box">
+			<view class="fs12 col999">添加图片</view>
+		</view>
+	</view>
+</view>

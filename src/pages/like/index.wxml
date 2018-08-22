@@ -1,1 +1,16 @@
-<text>this is like page</text>
+<view class="like-box">
+   <text class="title">喜欢了 {{likeNum}} 篇此刻</text>
+   <view class="like-list" wx:for="{{likeLists}}" wx:key="index">
+     <view class="disflex h63">
+        <text class="content">{{item.content}}</text>
+        <image src="{{item.imgUrl}}" class="{{!item.imgUrl && 'img-auto'}}"></image>
+     </view>
+     <view class="disflex space-betwn">
+        <view>
+            <text class="userName colblue"> {{item.userName}} </text>
+            <text class='iconfont icon-xingbie-nv'></text>
+        </view>
+        <text class="time col999">{{item.time}} 喜欢</text>
+     </view>
+   </view>
+</view>
