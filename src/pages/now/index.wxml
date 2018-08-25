@@ -1,4 +1,5 @@
 <view class='borderTop'>
+  <!-- <button open-type="getUserInfo">授权</button>  -->
   <view class='cardContainer'>
     <view class='cardInfo'>
       <view class='nowInfo disFlex'>

@@ -1,4 +1,6 @@
 // pages/now/index.js
+
+const app = getApp()
 Page({
 
   /**
@@ -20,6 +22,7 @@ Page({
     this.setData({
       test: 'hello oxford'
     })
+    console.log(app.globalData, '---===')
   },
 
   /**
