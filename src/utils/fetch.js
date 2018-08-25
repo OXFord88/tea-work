@@ -13,3 +13,4 @@ const post = (url, query={}, options={}) => {
 }
 
 export const HOST = 'https://www.yanlu8.com/chabuweb'
+

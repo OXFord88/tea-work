@@ -93,9 +93,23 @@ image {
 .colblue {
   color: #6EA4D3
 }
+.colccc {
+  color: #ccc;
+}
 .icon-xin {
  color: #ccc;
 }
 .icon-xin.zan {
   color: #FC6620;
+}
+.calendar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding-top: 20rpx;
+  z-index: 20;
+  box-shadow: 0 0 10rpx 0rpx #ccc;
+  border-radius: 8rpx;
 }

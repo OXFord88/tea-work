@@ -28,7 +28,8 @@
       },
       {
         "pagePath": "pages/add/index",
-        "iconPath": "images/add.png"
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add.png"
       },
       {
         "pagePath": "pages/like/index",
@@ -49,5 +50,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "茶布",
     "navigationBarTextStyle":"black"
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.0",
+      "provider": "wx92c68dae5a8bb046"
+    }
   }
 }
