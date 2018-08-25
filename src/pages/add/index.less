@@ -1,14 +1,17 @@
 .add-wrapper {
 	padding: 16*2rpx;
+	padding-bottom: 100rpx;
+	background: #f6f7f8;
+	height: 100%;
 	.edit-box {
-		background: #F6F7F8;
+		background: #fff;
 		border-radius: 16rpx;
 		padding: 24*2rpx;
 	}
-	.touxiang-box {
+	.img-box {
 		width: 295*2rpx;
 		height: 197*2rpx;
-		background: #fff;
+		background: #f6f7f8;
 		border: 1rpx solid #eee;
 		border-radius: 8rpx;
 		text-align: center;
@@ -16,4 +19,39 @@
 			padding-top: 220rpx;
 		}
 	}
+	textarea {
+		margin-top: 16*2rpx;
+		height: 230*2rpx;
+		width: 100%;
+	}
+	textarea, .input-box {
+		font-size: 28rpx;
+		color: #ccc;
+	}
+	.disFlex {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.radio-box {
+		color: #333;
+		radio {
+			transform: scale(0.5);
+		}
+		text {
+			position: relative;
+			left: -8rpx;
+		}
+	}
+	.edit-btn {
+		color: #fff;
+		background: #A4DEDC;
+		border-radius: 24*2rpx;
+		margin: 32rpx 0;
+		border: none;
+		&::after {
+			border: none;
+		}
+	}
+
 }
