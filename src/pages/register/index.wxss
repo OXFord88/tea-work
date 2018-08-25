@@ -29,7 +29,8 @@
   font-size: 30rpx;
   margin-right: 32rpx;
 }
-.register-wrapper .form .form-list input {
+.register-wrapper .form .form-list input,
+.register-wrapper .form .form-list .w100 {
   font-size: 30rpx;
   line-height: 96rpx;
   width: 400rpx;

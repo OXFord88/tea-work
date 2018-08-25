@@ -1,8 +1,27 @@
 <!--pages/add/index.wxml-->
 <view class="add-wrapper">
 	<view class="edit-box">
-		<view class="touxiang-box">
+		<view class="img-box">
 			<view class="fs12 col999">添加图片</view>
 		</view>
+		<view>
+		    <textarea
+		        placeholder="记录当下的生活状态"
+		        placeholder-class="input-box"
+		        bindinput="valueChange"
+		        maxlength="500">
+            </textarea>
+		</view>
+		<view class="disFlex">
+		    <view class="radio-box">
+            <checkbox-group bindchange="changeCheck">
+						  <label class="radio fs10">
+						    <checkbox value="{{checked}}"/>仅自己可见
+						  </label>
+						</checkbox-group>
+		    </view>
+		    <text class="fs10 col999">还能输入xxx个字</text>
+		</view>
 	</view>
+	<button bindtap="pushtime" class="edit-btn" hover-class="ac-btn">记下来</button>
 </view>

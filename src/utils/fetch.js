@@ -129,7 +129,7 @@ export const reportContent = (data, query = {}) => {
   content: 日刻内容 500
 */
 export const releaseTime = (data, query = {}) => {
-  return post(`${HOST}/diary/publishDiaryInfo`, {}, data)
+  return post(`${HOST}/diary/publishDiaryInfo?userid=${data.userid}&tags=${data.tags}&content=${data.content}`, {}, {})
 }
 
 
@@ -242,7 +242,6 @@ export const readPapers = (data, query = {}) => {
 }
 
 
-
 // 16、用户添加关注
 /*
   data:
@@ -332,13 +331,6 @@ export const checkMyPaper = (data, query = {}) => {
 export const mySendPaper = (data, query = {}) => {
   return post(`${HOST}/comment/selectByCommentsByPublishList?userid=${data.userid}&isFaverite=${data.isFaverite}&page=${data.page}&pagesize=${data.pagesize}`, {}, {})
 }
-
-
-
-
-
-
-
 
 
 

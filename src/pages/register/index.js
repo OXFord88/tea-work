@@ -5,62 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    showCalendar: false,
+    days_style: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    let days = new Date().getDate()
+    console.log(days)
+    let json = {
+      month: 'current',
+      day: days,
+      color: 'white',
+      background: '#A4DEDC'
+    }
+    let style = []
+    style.push(json)
+    this.setData({
+      days_style: style
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  dayClick: function(e) {
+    console.log(e.detail)
+    let data = e.detail;
+    let json = {
+      month: 'current',
+      day: data.day,
+      color: 'white',
+      background: '#A4dedc'
+    }
+    this.setData({
+      days_style: [json]
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  showCal() {
+    this.setData({
+      showCalendar: true
+    })
   }
 })

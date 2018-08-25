@@ -1,19 +1,60 @@
 .add-wrapper {
   padding: 32rpx;
+  padding-bottom: 100rpx;
+  background: #f6f7f8;
+  height: 100%;
 }
 .add-wrapper .edit-box {
-  background: #F6F7F8;
+  background: #fff;
   border-radius: 16rpx;
   padding: 48rpx;
 }
-.add-wrapper .touxiang-box {
+.add-wrapper .img-box {
   width: 590rpx;
   height: 394rpx;
-  background: #fff;
+  background: #f6f7f8;
   border: 1rpx solid #eee;
   border-radius: 8rpx;
   text-align: center;
 }
-.add-wrapper .touxiang-box view {
+.add-wrapper .img-box view {
   padding-top: 220rpx;
+}
+.add-wrapper textarea {
+  margin-top: 32rpx;
+  height: 460rpx;
+  width: 100%;
+}
+.add-wrapper textarea,
+.add-wrapper .input-box {
+  font-size: 28rpx;
+  color: #ccc;
+}
+.add-wrapper .disFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-wrapper .radio-box {
+  color: #333;
+}
+.add-wrapper .radio-box radio {
+  transform: scale(0.5);
+}
+.add-wrapper .radio-box text {
+  position: relative;
+  left: -8rpx;
+}
+.add-wrapper .edit-btn {
+  color: #fff;
+  background: #A4DEDC;
+  border-radius: 48rpx;
+  margin: 32rpx 0;
+  border: none;
+}
+.add-wrapper .edit-btn::after {
+  border: none;
+}
+.add-wrapper .ac-btn {
+  background-color: #7dc7c5;
 }
