@@ -46,16 +46,16 @@ Page({
     //     console.log(res)
     //   },
     // })
-    wx.request({
-      url: 'https://www.yanlu8.com/chabuweb/diary/getDiaryList',
-      data: {
-        userid: 8
-      },
-      method: "POST",
-      success(res) {
-        console.log(res)
-      }
-    })
+    // wx.request({
+    //   url: 'https://www.yanlu8.com/chabuweb/diary/getDiaryList',
+    //   data: {
+    //     userid: 8
+    //   },
+    //   method: "POST",
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // })
   },
 
   /**

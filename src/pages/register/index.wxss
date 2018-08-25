@@ -38,6 +38,9 @@
 .register-wrapper .form .form-list .input-place {
   color: #ccc;
 }
+.register-wrapper .form .form-list .col000 {
+  color: #000;
+}
 .register-wrapper .form .form-list .sex-select {
   font-size: 26rpx;
 }
@@ -74,4 +77,34 @@
 }
 .register-wrapper .form button::after {
   border: none;
+}
+.mask {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+.mask .msg-box {
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 560rpx;
+  height: 222rpx;
+  border-radius: 16rpx;
+  margin: -111rpx 0 0 -280rpx;
+  text-align: center;
+}
+.mask .fs13 {
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  line-height: 132rpx;
+  color: #888;
+}
+.mask .h44 {
+  line-height: 88rpx;
+  color: #4ABEBA;
 }
