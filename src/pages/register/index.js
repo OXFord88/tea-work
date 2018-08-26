@@ -1,4 +1,5 @@
 // pages/register/index.js
+const { HOST } = require('../../utils/fetch')
 const app = getApp()
 Page({
 
@@ -8,19 +9,31 @@ Page({
   data: {
     showCalendar: false,
     avartUrl: '../../images/head-bg.png',
-    sex: '0',
+    sex: '-1',
     days_style: [],
 
     nickname: undefined,
-    birth: undefined,
     schools: undefined,
+    days_style: [],
+    isSureSex: false,
+    birthDay: '为你匹配同龄人，仅自己可见',
+    checkBirth: false,
+    changeAvartValue: false
+  },
+  onLoad: function () {
+    const user = app.globalData.userInfo;
+    console.log(user, 'user')
+    this.setData({
+      avartUrl: user.avatarUrl,
+      nickname: user.nickName,
+      sex: user.sex ? user : '-1',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     let days = new Date().getDate()
-    console.log(days)
     let json = {
       month: 'current',
       day: days,
@@ -42,8 +55,12 @@ Page({
       color: 'white',
       background: '#A4dedc'
     }
+    let birth = data.year + '-' + this.toDobulle(data.month) + '-' + this.toDobulle(data.day)
     this.setData({
-      days_style: [json]
+      days_style: [json],
+      showCalendar: false,
+      birthDay: birth,
+      checkBirth: true
     })
   },
   showCal() {
@@ -51,6 +68,7 @@ Page({
       showCalendar: true
     })
   },
+
 
 
   choseSex: function (e) {
@@ -97,35 +115,37 @@ Page({
       success: function (res) {
         const tempFilePaths = res.tempFilePaths
         that.setData({
-          avartUrl: tempFilePaths[0]
+          avartUrl: tempFilePaths[0],
+          changeAvartValue: true
         })
         // that.upload(that, tempFilePaths[0])
       }
     })
   },
-  upload: function (page, path) {
-    // wx.showLoading({
-    //   title: '上传中...',
-    // })
+  upload: function (path, data) {
+    wx.showLoading({
+      title: '请求中...',
+    })
 
-    // setTimeout(function(){
-    //   wx.hideLoading()
-    // },2000)
-    // wx.uploadFile({
-    //   url:'',
-    //   filePath: path,
-    //   name: 'file',
-    //   header: {"Content-Type: multipart/form-data"},
-    //   formData: {
-    //     image: 'avart'
-    //   },
-    //   success: function (res) {
-    //     console.log(res, '文件上传成功！')
-    //   },
-    //   fail: function (res) {
-    //     console.log(res, '上传失败')
-    //   }
-    // })
+    setTimeout(function(){
+      wx.hideLoading()
+    },2000);
+
+    wx.uploadFile({
+      url: `${HOST}/uc/modifyUserInfo`,
+      filePath: path,
+      name: 'file',
+      // header: {"Content-Type: multipart/form-data"},
+      formData:{
+        ...data
+      },
+      success: function (res) {
+        console.log(res, '文件上传成功！')
+      },
+      fail: function (res) {
+        console.log(res, '上传失败')
+      }
+    })
 
 
   },
@@ -136,6 +156,27 @@ Page({
     const user = app.globalData.userInfo
     console.log(user)
     console.log(this.data)
+    const para = {
+      nickname: this.data.nickname,
+      schools: this.data.schools,
+      sex: parseInt(this.data.sex),
+      openid: user.openid,
+      birth: new Date(this.data.birthDay).getTime(),
+      // status: 0, //0 正常。1锁定
+      userid: user.userid, 
+    }
+    const avart = this.data.changeAvartValue ? '' : this.data.avartUrl
+    console.log(para, '参数请求', avart)
+    this.upload(avart, para)
+  },
+ 
+  sureSex() {
+    this.setData({
+      isSureSex: false
+    })
+  },
+  toDobulle(str) {
+    return str < 10 ? '0' + str : str;
   }
 
 })

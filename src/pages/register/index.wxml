@@ -20,7 +20,7 @@
         <view class="form-list">
             <text>生日</text>
             <!-- <input name="birth" placeholder="为你匹配同龄人，仅自己可见" placeholder-class="input-place"/> -->
-            <view class="colccc w100" bindtap='showCal'>为你匹配同龄人，仅自己可见</view>
+            <view class="colccc w100 {{checkBirth && 'col000'}}" bindtap='showCal'>{{birthDay}}</view>
         </view>
         <view class="form-list borderb">
             <text>在读学校</text>
@@ -34,4 +34,10 @@
       calendar-style="calendar" 
       days-color="{{days_style}}" 
       active-type="rounded"/>
+</view>
+<view class='mask' wx:if="{{isSureSex}}">
+  <view class='msg-box'>
+    <view class='fs13'>性别一旦选定，将无法更改</view>
+    <view class='fs16 h44' bindtap='sureSex'>知道了</view>
+  </view>
 </view>
