@@ -2,7 +2,7 @@
 <view class="userInfo-wrapper">
   <view class='userInfo-title'>
     <view class='touxiang'>
-      <image src='../../images/icon.jpg'></image>
+      <image bindtap="changeAvart" src='{{imgUrl}}'></image>
       <view class="bg pos-abs"></view>
       <icon class='iconfont icon-xingbie-nv pos-abs'></icon>
     </view>

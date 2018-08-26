@@ -2,19 +2,19 @@
     <view class="header fs16 col333">
         <view>Hi，欢迎加入茶布</view>
         <view>告诉我们一些你的个人信息吧</view>
-        <image mode="aspectFill" src="../../images/head-bg.png"></image>
+        <image bindtap="changeAvart" mode="aspectFill" src="{{avartUrl}}"></image>
         <view class="fs12">设置头像</view>
     </view>
     <form class="form">
         <view class="form-list">
             <text>昵称</text>
-            <input name="name" placeholder="最多8个汉字" placeholder-class="input-place"/>
+            <input value="{{nickname}}" data-type="nickname" bindinput="changeValue" name="name" placeholder="最多8个汉字" placeholder-class="input-place"/>
         </view>
         <view class="form-list">
             <text>性别</text>
             <view class="sex-select">
-                <text class="nv selected">女生</text>
-                <text class="nan">男生</text>
+                <text bindtap="choseSex" data-sex="0" class="nv {{sex == '0' ? 'selected' : null}}">女生</text>
+                <text bindtap="choseSex" data-sex="1" class="nan {{sex == '1' ? 'selected' : null}}">男生</text>
             </view>
         </view>
         <view class="form-list">
@@ -24,9 +24,9 @@
         </view>
         <view class="form-list borderb">
             <text>在读学校</text>
-            <input name="school" placeholder="如果你是在校生请填写" placeholder-class="input-place"/>
+            <input value="{{schools}}" data-type='schools' bindinput="changeValue" name="school" placeholder="如果你是在校生请填写" placeholder-class="input-place"/>
         </view>
-        <button class="fs16">完成</button>
+        <button bindtap="save" class="fs16">完成</button>
     </form>
     <calendar 
       wx:if="{{showCalendar}}"
