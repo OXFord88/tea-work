@@ -12,7 +12,6 @@
   width: 128rpx;
   height: 128rpx;
   margin-top: 76rpx;
-  border-radius: 128rpx;
 }
 .register-wrapper .form .form-list {
   border-top: 1rpx solid #d8d8d8;

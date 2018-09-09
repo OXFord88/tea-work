@@ -1,8 +1,9 @@
 <!--pages/add/index.wxml-->
 <view class="add-wrapper">
 	<view class="edit-box">
-		<view class="img-box">
-			<view class="fs12 col999">添加图片</view>
+		<view class="img-box" bindtap="changeAvart">
+			<image wx:if="{{hasImg}}" bindtap="changeAvart" mode="aspectFill" src="{{imgUrl}}"></image>
+			<view wx:else class="fs12 col999">添加图片</view>
 		</view>
 		<view>
 		    <textarea
@@ -20,7 +21,7 @@
 						  </label>
 						</checkbox-group>
 		    </view>
-		    <text class="fs10 col999">还能输入xxx个字</text>
+		    <text class="fs10 col999">还能输入{{textNum}}个字</text>
 		</view>
 	</view>
 	<button bindtap="pushtime" class="edit-btn" hover-class="ac-btn">记下来</button>
