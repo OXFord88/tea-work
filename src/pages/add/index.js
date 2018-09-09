@@ -10,7 +10,10 @@ Page({
     name: "hello world",
     checked: 'true',
     tags: ['此刻','经历','心情','求助','烦恼','吐槽','愿望'],
-    textareaValue: ''
+    textareaValue: '',
+    hasImg: false,
+    imgUrl: '',
+    textNum: 100,
   },
 
   /**
@@ -20,54 +23,45 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  changeAvart:function () {
+    const that = this;
+    wx.showActionSheet({
+      itemList: ['从相册', '拍照'],
+      success: function(res) {
+        if (res.tapIndex === 0) {
+          that.choose('album')
+        }else if (res.tapIndex === 1) {
+          that.choose('camera')
+        }
+      },
+      fail: function(res) {
+        console.log(res.errMsg)
+      }
+    }) 
+  },
+  choose: function (type) {
+    const that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: [type],
+      success: function (res) {
+        const tempFilePaths = res.tempFilePaths
+        that.setData({
+          hasImg: true,
+          imgUrl: tempFilePaths[0],
+          // changeAvartValue: true
+        })
+        // that.upload(that, tempFilePaths[0])
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log(this.data.name)
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   changeCheck: function (e) {
     this.setData({
       checked: e.detail.value.length ? 'true' : 'false'
@@ -76,10 +70,12 @@ Page({
   valueChange: function (e) {
     this.setData({
       textareaValue: e.detail.value,
+      textNum: 100 - e.detail.value.length
     })
   },
   pushtime: function () {
     const userInfo = app.globalData.userInfo;
+    console.log(userInfo)
     const para = {
       userid: userInfo.userid,
       tags: this.data.tags[1],
@@ -99,8 +95,6 @@ Page({
           title: '发布信息失败:' + data.data.message
         })
       }
-
-
 
     }).catch(err => {
 

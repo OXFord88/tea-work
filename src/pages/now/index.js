@@ -23,6 +23,10 @@ Page({
       test: 'hello oxford'
     })
     console.log(app.globalData, '---===')
+    wx.setTabBarBadge({
+      index: 0,
+      text: ''
+    })
   },
 
   /**
