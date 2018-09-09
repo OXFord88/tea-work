@@ -10,20 +10,18 @@
   </view>
   <view class="getPapeTitle">收到 {{getPapeTapNum}} 纸条</view>
   <view class="getPapeList">
-    <view wx:for="{{pageLists}}" wx:key="index" class="disFlex">
+    <view wx:for="{{pageLists}}" wx:key="index" class="">
       <view class="col999 disflex">
-        <text>#{{item.num}}</text>
-        <text wx:if="{{item.isCollect && !isUser}}">此刻主人已收藏</text>
-        <text wx:elif="{{isUser}}" class="iconfont icon-xin {{item.isZan ? 'zan' : ''}}"></text>
+        <text>{{item.time}}</text>
+        <text wx:if="{{isUser}}" class="iconfont icon-xin {{item.isZan ? 'zan' : ''}}"></text>
       </view>
       <view class="content">
         <view>{{item.content}}</view>
       </view>
-      <view class="textRight mt34">
+      <view class="textRight mt12">
         <text class="col999">From</text>
         <text class="colblue"> {{item.name}}</text>
       </view>
-      <view class="textRight col999">{{item.time}}</view>
     </view>
   </view>
   <view class="pasterBtn" wx:if="{{!isUser}}">

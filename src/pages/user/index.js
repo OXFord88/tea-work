@@ -1,4 +1,6 @@
 // pages/user/index.js
+const { checkUserTime } = require('../../utils/fetch')
+const app = getApp()
 Page({
 
   /**
@@ -16,7 +18,7 @@ Page({
     myNowLists: [{
       num: 33,
       time: 'xx月xx日 10:00',
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
+      contents: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
       imgUrl: '../../images/icon.jpg'
     }, {
       num: 33,
@@ -30,7 +32,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(app.globalData)
+    console.log('eee')
+    let para = {
+      userid: 9,
+      page: 1,
+      pagesize: 4
+    }
+    checkUserTime(para).then(data => {
+      console.log(data)
+      const res = data.data
+      if (res.code === '0000') {
+        this.setData({
+          myNowLists: res.data
+        })
+      } else {
+        console.log(res.message)
+      }
+    })
+    wx.showToast({
+      title: '已删除',
+      icon: 'success',
+      duration: 2000
+    })
   },
 
   /**

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date: '',
     userInfo: {
       imgUrl: '../../images/icon.jpg',
       userName: '左撇子',

@@ -7,11 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showCalendar: false,
+    date: '',
     avartUrl: '../../images/head-bg.png',
     sex: '-1',
-    days_style: [],
-
     nickname: undefined,
     schools: undefined,
     days_style: [],
@@ -33,43 +31,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let days = new Date().getDate()
-    let json = {
-      month: 'current',
-      day: days,
-      color: 'white',
-      background: '#A4DEDC'
-    }
-    let style = []
-    style.push(json)
-    this.setData({
-      days_style: style
-    })
+    
   },
-  dayClick: function(e) {
-    console.log(e.detail)
-    let data = e.detail;
-    let json = {
-      month: 'current',
-      day: data.day,
-      color: 'white',
-      background: '#A4dedc'
-    }
-    let birth = data.year + '-' + this.toDobulle(data.month) + '-' + this.toDobulle(data.day)
+  bindDateChange: function(e) {
+    console.log(e.detail.value)
     this.setData({
-      days_style: [json],
-      showCalendar: false,
-      birthDay: birth,
+      birthDay: e.detail.value,
       checkBirth: true
     })
   },
-  showCal() {
-    this.setData({
-      showCalendar: true
-    })
-  },
-
-
 
   choseSex: function (e) {
     const {sex} = e.currentTarget.dataset

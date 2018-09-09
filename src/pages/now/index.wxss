@@ -1,4 +1,21 @@
 /* pages/now/index.wxss */
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.cardInfo {
+  background: #fff;
+  padding: 48rpx;
+  border-radius: 16rpx;
+  color: #302137;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  min-height: 976rpx;
+}
 .disFlex {
   display: flex;
   justify-content: space-between;
@@ -13,8 +30,18 @@
   line-height: 20rpx;
   padding: 10rpx 16rpx;
 }
+.nowInfo view.dot {
+  position: relative;
+  padding-left: 30rpx;
+}
 .dot text {
-  color: #432617
+  width: 8rpx;
+  height: 8rpx;
+  background: #333;
+  border-radius: 8rpx;
+  position: absolute;
+  left: 16rpx;
+  top: 16rpx;
 }
 .cardInfo {
   display: flex;
@@ -42,4 +69,9 @@
 .pt42 {
   padding-top: 100rpx;
   margin-bottom: 0rpx;
+}
+.icon-list .iconfont {
+  color: #999;
+  margin-left: 32rpx;
+  font-size: 24rpx;
 }

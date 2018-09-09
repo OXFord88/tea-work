@@ -17,21 +17,21 @@
     <view class="left-border"></view>
     <view wx:for="{{myNowLists}}" wx:key="index">
         <view class="title fs10">
-          <text>第 {{item.num}} 篇此刻 </text>
+          <text>第 {{item.rownum}} 篇此刻 </text>
           <text class="col999"> {{item.time}}</text>
         </view>
         <view class="like-list">
           <view class="disFlex h63">
-            <text class="content">{{item.content}}</text>
-            <image mode="aspectFill" src="{{item.imgUrl}}" class="{{!item.imgUrl ? 'img-auto' : ''}}"></image>
+            <text class="content">{{item.contents}}</text>
+            <image mode="aspectFill" src="{{item.photo}}" class="{{!item.imgUrl ? 'img-auto' : ''}}"></image>
           </view>
           <view class="disFlex space-betwn fs10">
             <view>
-              <text>#经历</text>
+              <text>#{{item.tags}}</text>
               <text class="col999"> 999次浏览</text>
             </view>
             <view class="col999">
-              <text class='iconfont icon-xin ml20'>288</text>
+              <text class='iconfont icon-xin ml20'>{{item.likes}}</text>
               <text class='iconfont icon-send ml20'>222</text>
               <text class='iconfont icon-gengduo ml20'></text>
             </view>

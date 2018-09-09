@@ -15,30 +15,12 @@
       <text class='col15'>{{userInfo.visits}} </text>名访客
     </view>
   </view>
-  <view class="my-now">
-    <view class="left-border"></view>
-    <view wx:for="{{myNowLists}}" wx:key="index">
-        <view class="title fs10">
-          <text>第 {{item.num}} 篇此刻 </text>
-          <text class="col999"> {{item.time}}</text>
-        </view>
-        <view class="like-list">
-          <view class="disFlex h63">
-            <text class="content">{{item.content}}</text>
-            <image mode="aspectFill" src="{{item.imgUrl}}" class="{{!item.imgUrl ? 'img-auto' : ''}}"></image>
-          </view>
-          <view class="disFlex space-betwn fs10">
-            <view>
-              <text>#经历</text>
-              <text class="col999"> 999次浏览</text>
-            </view>
-            <view class="col999">
-              <text class='iconfont icon-xin ml20'>288</text>
-              <text class='iconfont icon-send ml20'>222</text>
-              <text class='iconfont icon-gengduo ml20'></text>
-            </view>
-          </view>
-        </view>
+  <view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
     </view>
-  </view>
+  </picker>
+</view>
 </view>

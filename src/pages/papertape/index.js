@@ -11,10 +11,11 @@ Page({
     isUser: false,
     pageLists: [{
       num: 12,
-      content: 'hello hello',
+      content: 'hello hello左撇子也有人抢左撇子也有人抢左撇子也有人抢左撇子也有人抢',
       name: '叶青青',
       isCollect: true,
-      isZan: true
+      isZan: true,
+      time: 'xx月xx日 xx:xx',
     }, {
       num: 13,
       content: 'hello hello',

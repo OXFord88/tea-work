@@ -1,9 +1,9 @@
-<view class='borderTop'>
+<view class=''>
   <!-- <button open-type="getUserInfo">授权</button>  -->
   <view class='cardContainer'>
     <view class='cardInfo'>
       <view class='nowInfo disFlex'>
-        <view class='dot'><text>·</text> 收到的第 {{num}} 篇此刻</view>
+        <view class='dot'><text></text> 收到的第 {{num}} 篇此刻</view>
         <view>#{{tag}}</view>
       </view>
       <view class='recMood'>
@@ -16,9 +16,9 @@
           <text class='time col999'>{{time}}</text>
         </view>
       </view>  
-      <view class='disFlex pt42'>
+      <view class='disFlex pt42 fs12'>
         <text class='col666'>{{viewsTime}}次浏览</text>
-        <view>
+        <view class="icon-list">
           <text class='iconfont icon-xin'>288</text>
           <text class='iconfont icon-send'>222</text>
           <text class='iconfont icon-gengduo'></text>

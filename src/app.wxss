@@ -19,21 +19,9 @@ image {
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
 .borderTop {
   border-top: 1px solid #ccc;
-}
-.cardContainer{
-  padding: 32rpx;
-}
-.cardInfo {
-  background: #F8F2F2;
-  padding: 48rpx;
-  border-radius: 16rpx;
-  color: #302137;
-  font-size: 28rpx;
-  line-height: 42rpx;
-  min-height: 976rpx;
 }
 .fs10 {
   font-size: 20rpx;
@@ -101,15 +89,4 @@ image {
 }
 .icon-xin.zan {
   color: #FC6620;
-}
-.calendar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  padding-top: 20rpx;
-  z-index: 20;
-  box-shadow: 0 0 10rpx 0rpx #ccc;
-  border-radius: 8rpx;
 }

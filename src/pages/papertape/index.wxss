@@ -35,18 +35,12 @@
 .paperTape .getPapeTitle {
   padding: 32rpx 0 22rpx 0;
 }
-.paperTape .getPapeList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .paperTape .getPapeList > view {
-  width: 332rpx;
+  padding: 32rpx;
   background: #fff;
-  height: 442rpx;
-  padding: 32rpx 20rpx;
+  border-radius: 8rpx;
   box-sizing: border-box;
-  margin-bottom: 22rpx;
+  margin-bottom: 24rpx;
 }
 .paperTape .getPapeList .disflex {
   display: flex;
@@ -55,12 +49,11 @@
 .paperTape .getPapeList .content {
   font-size: 28rpx;
   line-height: 42rpx;
-  height: 210rpx;
+  margin-top: 30rpx;
   align-items: center;
-  display: flex;
 }
-.paperTape .getPapeList .mt34 {
-  margin-top: 68rpx;
+.paperTape .getPapeList .mt12 {
+  margin-top: 24rpx;
 }
 .paperTape .getPapeList .textRight {
   text-align: right;

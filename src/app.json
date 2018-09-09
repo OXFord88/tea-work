@@ -22,7 +22,7 @@
       },
       {
         "pagePath": "pages/message/index",
-        "text": "纸条",
+        "text": "对话",
         "iconPath": "images/message.png",
         "selectedIconPath": "images/message2.png"
       },
@@ -34,7 +34,7 @@
       {
         "pagePath": "pages/like/index",
         "text": "喜欢",
-        "iconPath": "images/like.png",
+        "iconPath": "images/like3.png",
         "selectedIconPath": "images/like2.png"
       },
       {

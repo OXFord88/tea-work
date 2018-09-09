@@ -19,8 +19,9 @@
         </view>
         <view class="form-list">
             <text>生日</text>
-            <!-- <input name="birth" placeholder="为你匹配同龄人，仅自己可见" placeholder-class="input-place"/> -->
-            <view class="colccc w100 {{checkBirth && 'col000'}}" bindtap='showCal'>{{birthDay}}</view>
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+              <view class="picker colccc w100 {{checkBirth && 'col000'}}" bindtap='showCal'>{{birthDay}}</view>
+            </picker>
         </view>
         <view class="form-list borderb">
             <text>在读学校</text>
@@ -28,12 +29,6 @@
         </view>
         <button bindtap="save" class="fs16">完成</button>
     </form>
-    <calendar 
-      wx:if="{{showCalendar}}"
-      binddayClick="dayClick"
-      calendar-style="calendar" 
-      days-color="{{days_style}}" 
-      active-type="rounded"/>
 </view>
 <view class='mask' wx:if="{{isSureSex}}">
   <view class='msg-box'>

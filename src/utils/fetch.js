@@ -282,7 +282,7 @@ export const checkUserMessage = (data, query = {}) => {
   pagesize:每页显示条数
 */
 export const checkUserTime = (data, query = {}) => {
-  return post(`${HOST}/diary/getDiaryList`, {}, data)
+  return post(`${HOST}/diary/getDiaryList?userid=${data.userid}&page=${data.page}&pagesize=${data.pagesize}`, {}, data)
 }
 
 
