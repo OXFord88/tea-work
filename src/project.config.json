@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 10,
 			"list": [
 				{
 					"id": 0,
@@ -66,7 +66,7 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "个人资料",
 					"pathName": "pages/userInfo/index",
 					"query": ""
@@ -87,6 +87,18 @@
 					"id": -1,
 					"name": "add",
 					"pathName": "pages/add/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/bindphone/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindphone",
+					"pathName": "pages/bindphone/index",
 					"query": ""
 				}
 			]

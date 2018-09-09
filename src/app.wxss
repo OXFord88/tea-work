@@ -23,6 +23,13 @@ image {
 .borderTop {
   border-top: 1px solid #ccc;
 }
+
+.bdr-bottom {
+border-bottom: 1rpx solid #eee;
+}
+.bdr-top {
+  border-top: 1rpx solid #eee;
+}
 .fs10 {
   font-size: 20rpx;
 }
@@ -41,7 +48,21 @@ image {
 .col999 {
   color: #999;
 }
+button {
+  border: none;
+  background: #A4DEDC;
+  border-radius: 24px;
+  height: 48*2rpx;
+  color: #fff;
+  line-height: 48*2rpx;
+  outline: none;
+  margin-top: 32rpx;
+  font-size: 32rpx;
 
+}
+button::after {
+border: none;
+}
 @font-face {
     font-family: 'iconfont';
     src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAASYAA0AAAAACVwAAARBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GVgCCYhEICoVwhGsLFAABNgIkAxwEIAWFCAdcG94HUZQwSjPZjwTbVs1aBEoDMepSi00owk3KoliECR+4Bf/k2r/nJtn9+5J8BM1GAFokBWUNrIBZllVZdeoIjajrzP58nvWaP7MYMx3BN7lUkoJJl/DNSBcED5+797edJGpRE+oIkST0iYQUOKcE1++3KqadUBZv1EZI7z9UkmkT8UTIhESyUKB5g3NpFypDaJfTzWmg16XGZG7tk5cCBPh4I3kCwOdDBrXx1hwQQQ3AECsjDhig/F8LSGBO8x7gMJ1fH3mRgZFkjJVDa6MQapgek205w5xGIgYCi5UtTQnynFOEK7npAkQZw9l4h7zjvst7b8pzAIERfHq+v/57+Nvw+2ELEEtOHYgySoDxN4X+B4uk9OdgOAWWCrngB6AJgAN4E4b/QZIO1RMrY12sjamtVFSx4tob3u97eOcBlC/Oc/eee0/c6W4P7jy8UeMxEau/3t3bdU4a33dn593993fdG19RR5lhS06cPBmKo8/bsOzSpQYx5zh//nYI+5/Bll6oHxaxHvfudd2/3+1y9TrZul7wtBtZtkcgkijToJGIsDo/BB4ECRTklxGLjHWIZ5TyrKbeHis7qyslzbv3PaY7VSRJdzl7Bj023m+86IrfxDadu8fzWHvw+uybh2MjnenfFBazIaIzoP1ESETHAujzXm/hxUzlHds4vQBU0Q3vUg68qMqgj6fT1UF+v9Jon+2GKi+/Br9w9ytmW83ddbWmkNiK9z6q0N6ZHZMWdw4a3ng2v1odfCZ2TtJrKENM4NjNhw+TrelNO9Dz54jV7+AR1EGoKd1KZC+6OUYm529woJ07EaOneYEDozECegdWQOrRGQH7z2Jz0PLLl5dDj4CwHJu97+z0wPpHvY/W9KxBZsk2jFixgoAeAwIRUFdefSWQ4VsbA57H0rQfqklBj+iVdDUUE8vbWy50tMwwdehIrmhpv9DSYRpJtfUzNCQvaIeVZyyooT6X64ohrK8Bz1n1LM8C/5ka5j8B9Q05OeR+mmfO53FzWTkG4b8fAEBAePH4xapF3/Ff5unY0RwGeXPYBmQMAGHnME8B4NYmPykfrRmwLxkF4BzQCccBBcPGATDA8yBHwQrPdH+1jAAkMwZGkfVgZXaTHf0aJILXkMr8Ba8jevYHlXEKS6UAtAMCKVMHRol5sMroyY6+ABI1dkOqzE3wJnxaHzTHBjz0IojwUL6kEI7PrCgjoKEmnkDxgH8Ggo9F+F/5w1WyQvZ+gBEiEnpKPAT4092g5QdXFCeIEEiyZlyuLDngGnn03KycuuTB8WoixDLvQzKQyEOhiOHECBoquKY23CJKO66B02afIiciQMkCD1hySYMkj6LEV9X4XWJ8cqv96/JygFUoFK0y2Rgm7tibRTCkBS56LOLa+Kzh/AAGAHiwjy4AMWYjycopURo2rlZL+DJRppqn9gicBrfzEwOKusZvS0mPUK8BAAAA) format('woff2'),

@@ -1,0 +1,35 @@
+.bind-phone {
+  height: 100%;
+  background: #e5e5e5;
+  padding-top: 1rpx;
+}
+.bind-phone .form-list {
+  background: #fff;
+  padding-left: 32rpx;
+  font-size: 30rpx;
+}
+.bind-phone .form-list > view {
+  display: flex;
+  padding-right: 32rpx;
+  height: 96rpx;
+  align-items: center;
+}
+.bind-phone .form-list > view .input-place {
+  color: #ccc;
+}
+.bind-phone .form-list > view .only-right {
+  align-items: right;
+}
+.bind-phone .mt16 {
+  margin-top: 32rpx;
+}
+.bind-phone .mr20 {
+  margin-right: 60rpx;
+}
+.bind-phone .get-code {
+  font-size: 12px;
+  color: #6EA4D3;
+}
+.bind-phone .get-code.no-click {
+  color: #ccc;
+}

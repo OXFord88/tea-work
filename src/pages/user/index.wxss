@@ -36,6 +36,8 @@
 .user-wrapper .my-now {
   padding: 0 32rpx;
   position: relative;
+  background: #eee;
+  padding-bottom: 30rpx;
 }
 .user-wrapper .my-now .left-border {
   position: absolute;
@@ -43,7 +45,9 @@
   border-left: 2rpx solid #d8d8d8;
   left: 60rpx;
   top: 0;
-  z-index: -1;
+}
+.user-wrapper .my-now .pos-rel {
+  position: relative;
 }
 .user-wrapper .my-now .title {
   padding-top: 32rpx;
@@ -74,7 +78,7 @@
   color: #151515;
 }
 .user-wrapper .like-list {
-  background: #FFF8ED;
+  background: #fff;
   border-radius: 8rpx;
   height: 250rpx;
   padding: 32rpx;

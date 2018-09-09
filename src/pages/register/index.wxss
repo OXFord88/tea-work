@@ -12,7 +12,6 @@
   width: 128rpx;
   height: 128rpx;
   margin-top: 76rpx;
-  border-radius: 128rpx;
 }
 .register-wrapper .form .form-list {
   border-top: 1rpx solid #d8d8d8;
@@ -65,19 +64,6 @@
 .register-wrapper .form .form-list .sex-select .nan.selected {
   background: #21C0FC;
   color: #fff;
-}
-.register-wrapper .form button {
-  border: none;
-  background: #A4DEDC;
-  border-radius: 24px;
-  height: 96rpx;
-  color: #fff;
-  line-height: 96rpx;
-  outline: none;
-  margin-top: 32rpx;
-}
-.register-wrapper .form button::after {
-  border: none;
 }
 .mask {
   position: fixed;

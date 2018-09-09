@@ -1,5 +1,6 @@
 // pages/user/index.js
 const { checkUserTime } = require('../../utils/fetch')
+const util = require('../../utils/util')
 const app = getApp()
 Page({
 
@@ -15,17 +16,7 @@ Page({
       visits: 222,
       six: 1
     },
-    myNowLists: [{
-      num: 33,
-      time: 'xx月xx日 10:00',
-      contents: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      imgUrl: '../../images/icon.jpg'
-    }, {
-      num: 33,
-      time: 'xx月xx日 10:00',
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      imgUrl: ''
-    }]
+    myNowLists: []
   },
 
   /**
@@ -43,6 +34,10 @@ Page({
       console.log(data)
       const res = data.data
       if (res.code === '0000') {
+        res.data.map(item => {
+          item.created = util.formatTime(item.created)
+        })
+        console.log(res.data)
         this.setData({
           myNowLists: res.data
         })
@@ -50,13 +45,17 @@ Page({
         console.log(res.message)
       }
     })
-    wx.showToast({
-      title: '已删除',
-      icon: 'success',
-      duration: 2000
+    // wx.showToast({
+    //   title: '已删除',
+    //   icon: 'success',
+    //   duration: 2000
+    // })
+  },
+  pageToPerson() {
+    wx.navigateTo({
+      url: '../userInfo/index'
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

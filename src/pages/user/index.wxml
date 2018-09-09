@@ -11,11 +11,11 @@
         <text class="col666 fs10">{{userInfo.city}} 在茶布生活了 <text class="col15">{{userInfo.days}}</text> 天，<text class="col15">{{userInfo.visits}}</text> 名访客</text>
       </view>
     </view>
-    <text class="colblue fs12">个人资料 ></text>
+    <text class="colblue fs12" bindtap="pageToPerson">个人资料 ></text>
   </view>
   <view class="my-now">
     <view class="left-border"></view>
-    <view wx:for="{{myNowLists}}" wx:key="index">
+    <view wx:for="{{myNowLists}}" wx:key="index" class="pos-rel">
         <view class="title fs10">
           <text>第 {{item.rownum}} 篇此刻 </text>
           <text class="col999"> {{item.time}}</text>
@@ -28,7 +28,7 @@
           <view class="disFlex space-betwn fs10">
             <view>
               <text>#{{item.tags}}</text>
-              <text class="col999"> 999次浏览</text>
+              <text class="col999"> {{item.clicks}}次浏览</text>
             </view>
             <view class="col999">
               <text class='iconfont icon-xin ml20'>{{item.likes}}</text>

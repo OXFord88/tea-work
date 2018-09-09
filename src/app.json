@@ -7,7 +7,8 @@
     "pages/user/index",
     "pages/papertape/index",
     "pages/userInfo/index",
-    "pages/register/index"
+    "pages/register/index",
+    "pages/bindphone/index"
   ],
   "tabBar": {
     "color": "#ccc",
