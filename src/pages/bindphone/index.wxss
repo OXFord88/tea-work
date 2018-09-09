@@ -11,6 +11,7 @@
 .bind-phone .form-list > view {
   display: flex;
   padding-right: 32rpx;
+  position: relative;
   height: 96rpx;
   align-items: center;
 }
@@ -18,7 +19,9 @@
   color: #ccc;
 }
 .bind-phone .form-list > view .only-right {
-  align-items: right;
+  position: absolute;
+  right: 32rpx;
+  top: 30rpx;
 }
 .bind-phone .mt16 {
   margin-top: 32rpx;
@@ -32,4 +35,14 @@
 }
 .bind-phone .get-code.no-click {
   color: #ccc;
+}
+.bind-phone .fs12 {
+  font-size: 24rpx;
+}
+.bind-phone .col6ea4d3 {
+  color: #6ea4d3;
+}
+.bind-phone .align-center {
+  text-align: center;
+  margin-top: 48rpx;
 }
