@@ -93,18 +93,20 @@ Page({
     })
   },
   upload: function (path, data) {
-    wx.showLoading({
-      title: '请求中...',
-    })
+    // wx.showLoading({
+    //   title: '请求中...',
+    // })
 
-    setTimeout(function(){
-      wx.hideLoading()
-    },2000);
+    // setTimeout(function(){
+    //   wx.hideLoading()
+    // },2000);
 
+
+    console.log({...data})
     wx.uploadFile({
-      url: `${HOST}/uc/modifyUserInfo`,
+      url: `${HOST}/uc/modifyUserInfo`, //?userid=${data.userid}&openid=${data.openid}&nickname=${data.nickname}`,
       filePath: path,
-      name: 'file',
+      name: 'image',
       // header: {"Content-Type: multipart/form-data"},
       formData:{
         ...data
@@ -124,8 +126,8 @@ Page({
 
   save: function () {
     const user = app.globalData.userInfo
-    console.log(user)
-    console.log(this.data)
+    // console.log(user)
+    // console.log(this.data)
     const para = {
       nickname: this.data.nickname,
       schools: this.data.schools,
@@ -135,8 +137,8 @@ Page({
       // status: 0, //0 正常。1锁定
       userid: user.userid, 
     }
-    const avart = this.data.changeAvartValue ? '' : this.data.avartUrl
-    console.log(para, '参数请求', avart)
+    const avart = !this.data.changeAvartValue ? '' : this.data.avartUrl
+    // console.log(para, '参数请求', avart)
     this.upload(avart, para)
   },
  
