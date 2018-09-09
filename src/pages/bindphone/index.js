@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   
   },
   sendCode() {
@@ -41,5 +42,20 @@ Page({
       }
     }, 1000)
   },
+  bindThWx() {
+    wx.showModal({
+      title: '一键绑定手机',
+      content: '如果你的微信已绑定手机，授权后可直接与茶布账号绑定',
+      confirmText: '授权',
+      confirmColor: '#4ABEBA',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  }
 
 })

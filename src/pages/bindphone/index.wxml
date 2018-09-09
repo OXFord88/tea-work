@@ -14,5 +14,5 @@
     </view>
   </view>
   <button>完成</button>
-  <view class="fs12 col6ea4d3 align-center">使用微信已绑定的手机号</view>
+  <view class="fs12 col6ea4d3 align-center" bindtap="bindThWx">使用微信已绑定的手机号</view>
 </view>
