@@ -20,7 +20,7 @@
         <view class="form-list">
             <text>生日</text>
             <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-              <view class="picker colccc w100 {{checkBirth && 'col000'}}" bindtap='showCal'>{{birthDay}}</view>
+              <view class="picker colccc w100 {{checkBirth && 'col000'}}">{{birthDay}}</view>
             </picker>
         </view>
         <view class="form-list borderb">

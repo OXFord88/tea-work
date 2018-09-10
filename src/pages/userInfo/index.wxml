@@ -4,31 +4,31 @@
     <view class="from-list mt16 bdr-top">
       <view class="h72">
           <text>头像</text>
-          <image src='../../images/head-bg.png'></image>
+          <image src="{{message.avatar ? message.avatar : src}}"></image>
       </view>
     </view>
     <view class="from-list bdr-top mt16">
       <view>
         <text class='col000'>昵称</text>
-        <text class="col666">左撇子也有人抢</text>
+        <text class="col666">{{message.nickName}}</text>
       </view>
     </view>
     <view class="from-list">
       <view>
         <text class='col000'>性别</text>
-       <text class="col666">左撇子也有人抢</text>
+       <text class="col666">{{message.gender == 1 ? '男' : '女'}}</text>
       </view>
     </view>
     <view class="from-list">
       <view>
         <text class='col000'>生日</text>
-        <text class="col666">左撇子也有人抢</text>
+        <text class="col666">{{message.birth ? message.birth : ''}}</text>
       </view>
     </view>
     <view class="from-list bdr-bottom">
       <view class="bdr-none">
         <text class='col000'>在读学校</text>
-        <text class="col666">左撇子也有人抢</text>
+        <text class="col666">{{message.schools ? message.schools : ''}}</text>
       </view>
     </view>
     <view class="from-list mt16">

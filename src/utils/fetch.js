@@ -78,9 +78,9 @@ export const wxUpdate = (data, query = {}) => {
   "username":null 
   头像上传：<input type=file name=image/>
 */
-export const updateUserInfo = (data, query = {}) => {
+export const updateUserInfo = (url) => {
   // postFormData
-  return post(`${HOST}/uc/modifyUserInfo`, {}, data)
+  return post(`${HOST}/uc/modifyUserInfo${url}`, {}, {})
 }
 
 

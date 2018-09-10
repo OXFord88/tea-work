@@ -1,5 +1,5 @@
 // pages/register/index.js
-const { HOST } = require('../../utils/fetch')
+const { HOST, updateUserInfo } = require('../../utils/fetch')
 const app = getApp()
 Page({
 
@@ -16,16 +16,24 @@ Page({
     isSureSex: false,
     birthDay: '为你匹配同龄人，仅自己可见',
     checkBirth: false,
-    changeAvartValue: false
+    changeAvartValue: false,
+
+    message: {},
+    path: '',
   },
   onLoad: function () {
-    const user = app.globalData.userInfo;
-    console.log(user, 'user')
-    this.setData({
-      avartUrl: user.avatarUrl,
-      nickname: user.nickName,
-      sex: user.sex ? user : '-1',
-    })
+    const that = this;
+    setTimeout(function () {
+      const user = app.globalData.userInfo;
+      console.log(user, 'user')
+      that.setData({
+        avartUrl: user.avatar,
+        nickname: user.nickName,
+        sex: user.gender == 0 ? 0 : user.gender == 1 ? 1 : -1,
+        birthDay: user.birth ? user.birth : '为你匹配同龄人，仅自己可见',
+        schools: user.schools ? user.schools : ''
+      })
+    },500)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -85,7 +93,8 @@ Page({
       success: function (res) {
         const tempFilePaths = res.tempFilePaths
         that.setData({
-          avartUrl: tempFilePaths[0],
+          avatar: tempFilePaths[0],
+          path: tempFilePaths[0],
           changeAvartValue: true
         })
         // that.upload(that, tempFilePaths[0])
@@ -138,8 +147,31 @@ Page({
       userid: user.userid, 
     }
     const avart = !this.data.changeAvartValue ? '' : this.data.avartUrl
-    // console.log(para, '参数请求', avart)
-    this.upload(avart, para)
+    console.log(para, '参数请求')
+    // this.upload(avart, para)
+
+
+    if (this.data.path) {
+      // 说明上传过头像
+    }else{
+      // 说明只修改的相关的信息
+      const url = `?nickname=${this.data.nickname}&birth=${new Date(this.data.birthDay).getTime()}&schools=${this.data.schools}&sex=${this.data.sex}&status=0&tags=${user.tags}&userid=${user.userid}&openid=${user.openid}`
+      console.log(url)
+      updateUserInfo(url).then( data => {
+        console.log(data, '****')
+        if (data.data.code === '0000') {
+
+        }else{
+          wx.showToast({
+            icon: 'error',
+            title: '更新错误'
+          })
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+
+    }
   },
  
   sureSex() {

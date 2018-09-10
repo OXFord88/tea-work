@@ -1,4 +1,5 @@
 // pages/userInfo/index.js
+const app = getApp()
 Page({
 
   /**
@@ -25,14 +26,29 @@ Page({
       time: 'xx月xx日 10:00',
       content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
       imgUrl: ''
-    }]
+    }],
+
+
+    src: '../../images/head-bg.png',
+    message: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const that = this;
+    
+    setTimeout(function () {
+      console.log(app.globalData.userInfo, '&&&&')
+      if (app.globalData.userInfo) {
+        that.setData({
+          message: app.globalData.userInfo
+        })
+        // console.log(that.data.message.message.avatar)
+      } 
+    },500)
+    
   },
 
   /**
