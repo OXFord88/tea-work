@@ -5,62 +5,57 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    sendMsg: '获取验证码',
+    canSend: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  sendCode() {
+    if (!this.data.canSend) {
+      return false;
+    }
+    let num = 60;
+    let _this = this;
+    _this.setData({
+      sendMsg: num + 's后重新发送',
+      canSend: false
+    })
+    let timer = setInterval(() => {
+      num--;
+      if (num === 0) {
+        clearInterval(timer)
+        _this.setData({
+          sendMsg: '重新发送',
+          canSend: true
+        })
+      } else {
+        _this.setData({
+          sendMsg: num + 's后重新发送',
+          canSend: false
+        })
+      }
+    }, 1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  bindThWx() {
+    wx.showModal({
+      title: '一键绑定手机',
+      content: '如果你的微信已绑定手机，授权后可直接与茶布账号绑定',
+      confirmText: '授权',
+      confirmColor: '#4ABEBA',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
+
 })
