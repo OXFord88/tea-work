@@ -1,4 +1,6 @@
 // pages/userInfo/index.js
+// const { formatDate } = '../utils/util.js'
+const util = require('../../utils/util')
 const app = getApp()
 Page({
 
@@ -6,30 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '',
-    userInfo: {
-      imgUrl: '../../images/icon.jpg',
-      userName: '左撇子',
-      city: '北京',
-      days: 333,
-      visits: 222,
-      six: 1,
-      school: '华北电力大学'
-    },
-    myNowLists: [{
-      num: 33,
-      time: 'xx月xx日 10:00',
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      imgUrl: '../../images/icon.jpg'
-    }, {
-      num: 33,
-      time: 'xx月xx日 10:00',
-      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
-      imgUrl: ''
-    }],
-
-
-    src: '../../images/head-bg.png',
     message: {},
   },
 
@@ -42,6 +20,9 @@ Page({
     setTimeout(function () {
       console.log(app.globalData.userInfo, '&&&&')
       if (app.globalData.userInfo) {
+        // app.globalData.userInfo.map(item => {
+        //   item.birth = util.formatDate(item.birth)
+        // })
         that.setData({
           message: app.globalData.userInfo
         })

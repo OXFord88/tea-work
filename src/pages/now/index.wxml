@@ -20,7 +20,7 @@
         <text class='col666'>{{viewsTime}}次浏览</text>
         <view class="icon-list">
           <text class='iconfont icon-xin'>288</text>
-          <text class='iconfont icon-send'>222</text>
+          <text class='iconfont icon-send' bindtap='toPageMessage'>222</text>
           <text class='iconfont icon-gengduo'></text>
         </view>
       </view>

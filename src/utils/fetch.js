@@ -5,6 +5,7 @@ const completeHeader = (header) => {
     ...{
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       'credentials': 'include'
     }
   }
@@ -34,11 +35,23 @@ const parseJSON = (data) => {
   }
 }
 
+const deal = (data = {}) => {
+  let temp = '';
+  let num = 0;
+  for(let n in data) {
+    temp+=`${num > 0 ? '&' : ''}${n}=${data[n]}`;
+    num+=1
+  }
+  return temp;
+}
+
 const post = (url, query={}, data, options={}) => {
+  console.log(deal(data))
   return new Promise( (resolve, reject) => {
     wx.request({
       url: url,
-      data,
+      // data: deal(data),
+      data: JSON.stringify(data),
       header: completeHeader(options),
       method: 'POST',
       dataType: 'JSON',
@@ -59,6 +72,11 @@ export const HOST = 'https://www.yanlu8.com/chabuweb'
   *openid
   wxavatar 头像地址
 */
+const token = wx.getStorageSync('keys') ? wx.getStorageSync('keys').token : ''
+const tokenUrl = (url) => {
+  return (token && url) ? `&token=${token}` : ''
+}
+
 export const wxUpdate = (data, query = {}) => {
   return post(`${HOST}/uc/addUserInfo`, {}, data)
 }
@@ -78,9 +96,13 @@ export const wxUpdate = (data, query = {}) => {
   "username":null 
   头像上传：<input type=file name=image/>
 */
+
 export const updateUserInfo = (url) => {
   // postFormData
-  return post(`${HOST}/uc/modifyUserInfo${url}`, {}, {})
+  return post(`${HOST}/uc/modifyUserInfo${url}${tokenUrl(url)}`, {}, {})
+  // url['token'] = token
+  // console.log(url, '-----')
+  // return post(`${HOST}/uc/modifyUserInfo`, {}, url)
 }
 
 
@@ -92,7 +114,7 @@ export const updateUserInfo = (url) => {
   userid: 用户id
 */
 export const bingMobile = (data, query = {}) => {
-  return post(`${HOST}/uc/getValidCode`, {}, data)
+  return post(`${HOST}/uc/getValidCode?mobile=${data.mobile}&userid=${data.userid}${tokenUrl(true)}`, {}, data)
 }
 
 // 4、绑定手机号-检查验证码
@@ -103,7 +125,7 @@ export const bingMobile = (data, query = {}) => {
   *userid: 用户id
 */
 export const checkbingMobile = (data, query = {}) => {
-  return post(`${HOST}/uc/bindMobile`, {}, data)
+  return post(`${HOST}/uc/bindMobile?mobile=${data.mobile}&code=${data.code}&userid=${data.userid}${tokenUrl(true)}`, {}, data)
 }
 
 
@@ -116,7 +138,7 @@ export const checkbingMobile = (data, query = {}) => {
   content: 举报内容 可为空
 */
 export const reportContent = (data, query = {}) => {
-  return post(`${HOST}/users/report`, {}, data)
+  return post(`${HOST}/users/report?userid=${data.userid}&flag=${data.flag}&referenceid=${data.referenceid }&content=''${tokenUrl(true)}`, {}, data)
 }
 
 
@@ -140,7 +162,7 @@ export const releaseTime = (data, query = {}) => {
   *diaryid: string 日刻id
 */
 export const delOneOfTime = (data, query = {}) => {
-  return post(`${HOST}/diary/delDiary`, {}, data)
+  return post(`${HOST}/diary/delDiary?userid=${data.userid}&diaryid=${data.diaryid}${tokenUrl(true)}`, {}, data)
 }
 
 
@@ -228,7 +250,7 @@ export const pushPaper = (data, query = {}) => {
   "commentsid ":"1"—纸条ID
 */
 export const delPaper = (data, query = {}) => {
-  return post(`${HOST}/comment/deleleComments`, {}, data)
+  return post(`${HOST}/comment/deleleComments?userid=${data.userid}&commentsid=${data.commentsid}${tokenUrl(true)}`, {}, data)
 }
 
 
@@ -270,7 +292,8 @@ export const cancelFollow = (data, query = {}) => {
   touserid:2—要查看的用户ID(自己看自己和userid相同)
 */
 export const checkUserMessage = (data, query = {}) => {
-  return post(`${HOST}/uc/getUserinfo`, {}, data)
+  console.log(data)
+  return post(`${HOST}/uc/getUserinfo?userid=${data.userid}&touserid=${data.touserid}${tokenUrl(true)}`, {}, data)
 }
 
 
@@ -282,7 +305,7 @@ export const checkUserMessage = (data, query = {}) => {
   pagesize:每页显示条数
 */
 export const checkUserTime = (data, query = {}) => {
-  return post(`${HOST}/diary/getDiaryList?userid=${data.userid}&page=${data.page}&pagesize=${data.pagesize}`, {}, data)
+  return post(`${HOST}/diary/getDiaryList?userid=${data.userid}&page=${data.page}&pagesize=${data.pagesize}${tokenUrl(true)}`, {}, data)
 }
 
 

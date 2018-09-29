@@ -3,16 +3,16 @@
   <view class='form-list bdr-top mt16'>
     <view class="bdr-bottom">
       <text class="mr20">手机号</text>
-      <input name="mobile" placeholder='请输入您的手机号码'  placeholder-class="input-place"/>
+      <input name="mobile" placeholder='请输入您的手机号码' type="tel" maxlength="11" bindinput="getMobild"  placeholder-class="input-place"/>
     </view>
   </view>
   <view class='form-list bdr-bottom'>
     <view>
       <text class="mr20">验证码</text>
-      <input name='code' placeholder='请输入短信验证码'  placeholder-class="input-place"/>
+      <input name='code' placeholder='请输入短信验证码' bindinput="getCode"  placeholder-class="input-place"/>
       <text class="only-right get-code {{canSend ? '' : 'no-click'}}" bindtap="sendCode">{{sendMsg}}</text>
     </view>
   </view>
-  <button>完成</button>
+  <button bindtap="toComplate">完成</button>
   <view class="fs12 col6ea4d3 align-center" bindtap="bindThWx">使用微信已绑定的手机号</view>
 </view>

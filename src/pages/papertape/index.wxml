@@ -1,11 +1,6 @@
 <view class="paperTape">
   <view class="recomment">
-    <view class="title">
-      <text class="userName"> {{userName}} </text>
-      <text class='iconfont icon-xingbie-nv'></text>
-      <text class="col666"> 的第{{num}}篇此刻</text>
-    </view>
-    <view class="content">此刻的内容</view>
+    <view class="content">{{content}}</view>
     <text class="nowLink">查看此篇此刻 ></text>
   </view>
   <view class="getPapeTitle">收到 {{getPapeTapNum}} 纸条</view>

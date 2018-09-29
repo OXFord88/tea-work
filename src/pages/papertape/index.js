@@ -8,7 +8,8 @@ Page({
     userName: "左撇子也有人抢",
     num: '66',
     getPapeTapNum: '88',
-    isUser: false,
+    isUser: true,
+    content: '左撇子也有人抢左撇子也有人抢左撇子也有人抢左撇子也有人抢左撇子也有人抢左撇子也有人抢',
     pageLists: [{
       num: 12,
       content: 'hello hello左撇子也有人抢左撇子也有人抢左撇子也有人抢左撇子也有人抢',

@@ -7,7 +7,7 @@
         <icon class="iconfont icon-xingbie-nv pos-abs"></icon>
       </view>
       <view>
-        <view>{{userInfo.userName}}</view>
+        <view>{{userInfo.nickname}}</view>
         <text class="col666 fs10">{{userInfo.city}} 在茶布生活了 <text class="col15">{{userInfo.days}}</text> 天，<text class="col15">{{userInfo.visits}}</text> 名访客</text>
       </view>
     </view>
@@ -32,8 +32,8 @@
             </view>
             <view class="col999">
               <text class='iconfont icon-xin ml20'>{{item.likes}}</text>
-              <text class='iconfont icon-send ml20'>222</text>
-              <text class='iconfont icon-gengduo ml20'></text>
+              <text class='iconfont icon-send ml20'>{{item.comments}}</text>
+              <text class='iconfont icon-gengduo ml20' data-pid="{{item.userid}}" data-id="{{item.diaryid}}" bindtap="delDiary"></text>
             </view>
           </view>
         </view>

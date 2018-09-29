@@ -10,11 +10,13 @@ Page({
   data: {
     num: 2,
     isGet: true,
+    isDuihua: false,
+    isLike: false,
     isSend: false,
     pageLists: [{
       isNew: true,
       num: 12,
-      content: 'hello hello叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青叶青青',
+      content: 'hello hello叶青青叶青青叶青青叶青',
       name: '叶青青',
       time: 'xx月xx日 xx:xx',
       isCollect: true,
@@ -32,7 +34,20 @@ Page({
       time: 'xx月xx日 xx:xx',
       isCollect: false
     }],
-
+    likeNum: 20,
+    likeLists: [{
+      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
+      userName: '页面的初始数据',
+      time: '月20日 10:20 ',
+      imgUrl: '../../images/icon.jpg',
+      tag: '经历'
+    }, {
+      content: '页面的初始数据页面的初始数据页面的初始数据页面的初始数据',
+      userName: '页面的初始数据',
+      time: '月20日 10:20 ',
+      tag: '心情'
+      // imgUrl: '../../images/icon.jpg'
+    }],
 
 
 
@@ -134,6 +149,8 @@ Page({
     console.log(str)
     this.setData({
       isGet: str === 'get',
+      isDuihua: str === 'duihua',
+      isLike: str === 'like',
       isSend: str === 'send'
     })
     if (str === 'get') {

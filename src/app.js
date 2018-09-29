@@ -1,6 +1,7 @@
 //app.js
 
 const { wxUpdate } = require('./utils/fetch')
+const { formatDate } = require('./utils/util')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -32,9 +33,9 @@ App({
                       // 可以将 res 发送给后台解码出 unionId
                       const person = mes.userInfo
                       const para = {
-                        // nickname: person.nickName,
+                        nickname: person.nickName,
                         openid: openid,
-                        // wxavatar: person.avatarUrl
+                        wxavatar: person.avatarUrl
                       }
                       that.update(para, person)
                     }
@@ -61,8 +62,9 @@ App({
       console.log(data)
       if (data.statusCode < 300) {
         // 成功
-        that.globalData.userInfo = {...mes, ...data.data.data}
-        wx.setStorageSync('keys', {...mes, ...data.data.data})
+        that.globalData.userInfo = {...mes, ...data.data.data, token: data.data.token}
+        that.globalData.userInfo.birth = formatDate(data.data.data.birth)
+        wx.setStorageSync('keys', {...mes, ...data.data.data, token: data.data.token})
       }else{
         wx.showToast({
           icon: 'none',
@@ -73,6 +75,6 @@ App({
   },
 
   globalData: {
-    userInfo: null
+    // userInfo: null
   }
 })

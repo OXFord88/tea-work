@@ -1,4 +1,7 @@
 // pages/bindphone/index.js
+const { bingMobile, checkbingMobile } = require('../../utils/fetch')
+// const util = require('../../utils/util')
+const app = getApp()
 Page({
 
   /**
@@ -6,7 +9,9 @@ Page({
    */
   data: {
     sendMsg: '获取验证码',
-    canSend: true
+    canSend: true,
+    mobile: null,
+    code: null,
   },
 
   /**
@@ -16,7 +21,45 @@ Page({
 
   
   },
+  getMobild(e) {
+    this.setData({
+      mobile: e.detail.value
+    })
+  },
+  getCode(e) {
+    this.setData({
+      code: e.detail.value
+    })
+  },
+  check() {
+    if (!this.data.mobile) {
+      wx.showToast({
+        title: '请输入手机号'
+      })
+      return false;
+    }
+    // if (!this.data.code) {
+    //   wx.showToast({
+    //     title: '请输入验证码'
+    //   })
+    //   return false;
+    // }
+    if (/1\d{10}/.test(this.mobile)) {
+      wx.showToast({
+        title: '请输入正确的手机号'
+      })
+      return false;
+    }
+  },
   sendCode() {
+    this.check()
+    let param = {
+      userid: app.globalData.userInfo.userid || 9,
+      mobile: this.data.mobile
+    }
+    bingMobile(param).then(res => {
+      console.log(res)
+    })
     if (!this.data.canSend) {
       return false;
     }
@@ -41,6 +84,22 @@ Page({
         })
       }
     }, 1000)
+  },
+  toComplate() {
+    if (!this.data.code) {
+      wx.showToast({
+        title: '请输入验证码'
+      })
+      return false;
+    }
+    const that = this
+    checkbingMobile({
+      mobile: that.data.mobile,
+      userid: app.globalData.userInfo.userid,
+      code: that.data.code
+    }).then( res => {
+      console.log(res)
+    })
   },
   bindThWx() {
     wx.showModal({

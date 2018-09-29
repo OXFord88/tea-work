@@ -1,8 +1,10 @@
 <!--pages/message/index.wxml-->
 <view class='message'>
   <view class="message-tab">
-    <text id="get" class="{{isGet && 'active'}}" bindtap="toggleTab">我收到的</text>
-    <text id="send" class="{{isSend && 'active'}}" bindtap="toggleTab">我发出的</text>
+    <text id="duihua" class="{{isDuihua && 'active'}}" bindtap="toggleTab">对话</text>
+    <text id="like" class="{{isLike && 'active'}}" bindtap="toggleTab">喜欢</text>
+    <text id="get" class="{{isGet && 'active'}}" bindtap="toggleTab">收到的纸条</text>
+    <text id="send" class="{{isSend && 'active'}}" bindtap="toggleTab">发出的纸条</text>
   </view>
   <view class="message-info">
     <view class="message-title" wx:if="{{isGet}}">
@@ -14,42 +16,61 @@
     </view>
     <view class="message-list">
       <view class="getPapeList" wx:if="{{isGet}}">
-          <view wx:for="{{pageLists}}" wx:key="index" class="disFlex">
+          <view wx:for="{{pageLists}}" wx:key="index" class="">
             <view class="col999 disflex">
               <view>
-                <text class="{{item.isNew && 'is-new'}}">来自你的 </text>
-                <text class="colblue">第{{item.num}}篇此刻 ></text>
+                <text class="{{item.isNew && 'is-new'}}">{{item.time}} </text>
               </view>
               <text class="iconfont icon-xin {{item.isZan ? 'zan' : ''}}"></text>
             </view>
             <view class="content">
               <view>{{item.content}}</view>
             </view>
-            <view class="textRight mt34">
-              <text class="col999">From</text>
-              <text class="colblue"> {{item.name}}</text>
+            <view class="disflex">
+                <view class="colblue">查看源此刻 ></view>
+                <view class="textRight">
+                  <text class="col999">From</text>
+                  <text class="colblue"> {{item.name}}</text>
+                </view>
             </view>
-            <view class="textRight col999">{{item.time}}</view>
           </view>
       </view>
       <view class="getPapeList" wx:if="{{isSend}}">
-          <view wx:for="{{pageLists}}" wx:key="index" class="disFlex">
-            <view class="">
-              <text class="col999">From</text>
-              <text class="colblue"> {{item.name}}</text>
-            </view>
-            <view class=" col999">{{item.time}}</view>
-            <view class="content">
-              <view>{{item.content}}</view>
-            </view>
-            <view class="col999 disflex mt34">
-              <view>
-                <text>发给Ta的 </text>
-                <text class="colblue">第{{num}}篇此刻 ></text>
-              </view>
+        <view wx:for="{{pageLists}}" wx:key="index" class="">
+          <view class="col999 disflex">
+            <view>
+              <text>{{item.time}} </text>
             </view>
           </view>
+          <view class="content">
+            <view>{{item.content}}</view>
+          </view>
+          <view class="disflex">
+              <view class="colblue">查看源此刻 ></view>
+          </view>
+        </view>
       </view>
+      <view class="get"></view>
+    </view>
+    <view class="like-box" wx:if="{{isLike}}">
+       <text class="title">喜欢了 {{likeNum}} 篇此刻</text>
+       <view class="like-list" wx:for="{{likeLists}}" wx:key="index">
+         <view class="disflex h63">
+            <text class="content">{{item.content}}</text>
+            <image src="{{item.imgUrl}}" class="{{!item.imgUrl && 'img-auto'}}"></image>
+         </view>
+         <view class="disflex space-betwn">
+            <view>
+                <text class="col333">#{{item.tag}}</text>
+                <text class="col999"> {{item.time}}</text>
+            </view>
+            <view class="icon-list">
+              <text class='iconfont icon-xin'>288</text>
+              <text class='iconfont icon-send' bindtap='toPageMessage'>222</text>
+              <text class='iconfont icon-gengduo'></text>
+            </view>
+         </view>
+       </view>
     </view>
   </view>
 </view>

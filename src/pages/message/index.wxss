@@ -4,6 +4,8 @@
   font-size: 24rpx;
 }
 .message .message-tab {
+  display: flex;
+  justify-content: space-between;
   padding: 0 32rpx;
   padding-bottom: 20rpx;
   border-bottom: 1rpx solid #d8d8d8;
@@ -41,9 +43,8 @@
   justify-content: space-between;
 }
 .message .getPapeList > view {
-  width: 332rpx;
+  width: 100%;
   background: #fff;
-  height: 442rpx;
   padding: 32rpx 20rpx;
   box-sizing: border-box;
   margin-bottom: 22rpx;
@@ -55,18 +56,51 @@
 .message .getPapeList .content {
   font-size: 28rpx;
   line-height: 42rpx;
-  height: 210rpx;
-  align-items: center;
-  display: flex;
-}
-.message .getPapeList .mt34 {
-  margin-top: 68rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 .message .getPapeList .textRight {
   text-align: right;
 }
 .message .ml20 {
   margin-left: 40rpx;
+}
+.message .like-box {
+  font-size: 24rpx;
+}
+.message .like-box .title {
+  color: #000;
+}
+.message .like-box .disflex {
+  display: flex;
+}
+.message .like-box .like-list {
+  background: #fff;
+  border-radius: 8rpx;
+  height: 250rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin: 32rpx 0;
+}
+.message .like-box .like-list image {
+  width: 190rpx;
+  height: 126rpx;
+}
+.message .like-box .like-list image.img-auto {
+  width: auto;
+  height: auto;
+}
+.message .like-box .iconfont {
+  font-size: 24rpx;
+}
+.message .like-box .h63 {
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.message .like-box .space-betwn {
+  justify-content: space-between;
 }
 .message .is-new {
   position: relative;
@@ -82,4 +116,9 @@
   height: 16rpx;
   background: #FC6620;
   border-radius: 16rpx;
+}
+.message .icon-list .iconfont {
+  color: #999;
+  margin-left: 32rpx;
+  font-size: 24rpx;
 }

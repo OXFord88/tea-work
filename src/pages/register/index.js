@@ -23,17 +23,17 @@ Page({
   },
   onLoad: function () {
     const that = this;
-    setTimeout(function () {
-      const user = app.globalData.userInfo;
-      console.log(user, 'user')
-      that.setData({
-        avartUrl: user.avatar,
-        nickname: user.nickName,
-        sex: user.gender == 0 ? 0 : user.gender == 1 ? 1 : -1,
-        birthDay: user.birth ? user.birth : '为你匹配同龄人，仅自己可见',
-        schools: user.schools ? user.schools : ''
-      })
-    },500)
+    // setTimeout(function () {
+    //   const user = app.globalData.userInfo;
+    //   console.log(user, 'user')
+    //   that.setData({
+    //     avartUrl: user.avatar,
+    //     nickname: user.nickName,
+    //     sex: user.gender == 0 ? 0 : user.gender == 1 ? 1 : -1,
+    //     birthDay: user.birth ? user.birth : '为你匹配同龄人，仅自己可见',
+    //     schools: user.schools ? user.schools : ''
+    //   })
+    // },500)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -51,6 +51,11 @@ Page({
 
   choseSex: function (e) {
     const {sex} = e.currentTarget.dataset
+    wx.showModal({
+      content: '性别一旦确定，将无法更改',
+      showCancel: false,
+      confirmText: '知道了'
+    })
     this.setData({
       sex: sex
     })
@@ -160,7 +165,9 @@ Page({
       updateUserInfo(url).then( data => {
         console.log(data, '****')
         if (data.data.code === '0000') {
-
+          // wx.switchTab({
+          //   url: '../user/index'
+          // })
         }else{
           wx.showToast({
             icon: 'error',
@@ -172,6 +179,11 @@ Page({
       })
 
     }
+
+    // console.log(para)
+    // updateUserInfo(para).then( data => {
+    //   console.log(data, '====')
+    // })
   },
  
   sureSex() {

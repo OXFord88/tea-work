@@ -3,6 +3,8 @@
   background: #f6f7f8;
   font-size: 24rpx;
   .message-tab {
+    display: flex;
+    justify-content: space-between;
     padding: 0 16*2rpx;
     padding-bottom: 20rpx;
     border-bottom: 1rpx solid #d8d8d8;
@@ -39,9 +41,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     & > view {
-      width: 166*2rpx;
+      width: 100%;
       background: #fff;
-      height: 221*2rpx;
+      //height: 221*2rpx;
       padding: 32rpx 20rpx;
       box-sizing: border-box;
       margin-bottom: 22rpx;
@@ -53,12 +55,12 @@
     .content {
       font-size: 28rpx;
       line-height: 42rpx;
-      height: 105*2rpx;
-      align-items: center;
-      display: flex;
+      //height: 105*2rpx;
+      margin-top: 30rpx;
+      margin-bottom: 30rpx;
     }
     .mt34 {
-      margin-top: 34*2rpx;
+      //margin-top: 34*2rpx;
     }
     .textRight {
       text-align: right;
@@ -66,6 +68,44 @@
   }
   .ml20 {
     margin-left: 40rpx;
+  }
+  .like-box {
+    font-size: 24rpx;
+    //padding: 32rpx;
+    .title {
+      color: #000;
+    }
+    .disflex {
+      display: flex;
+    }
+    .like-list {
+      background: #fff;
+      border-radius: 8rpx;
+      height: 125*2rpx;
+      padding: 32rpx;
+      box-sizing: border-box;
+      margin: 32rpx 0;
+      image {
+        width: 95*2rpx;
+        height: 63*2rpx;
+        &.img-auto {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+    .iconfont {
+      font-size: 24rpx;
+    }
+    .h63 {
+      height: 63*2rpx;
+      display: flex;
+      align-items: center;
+      margin-bottom: 32rpx;
+    }
+    .space-betwn {
+      justify-content: space-between;
+    }
   }
   .is-new {
     position: relative;
@@ -81,5 +121,10 @@
       background: #FC6620;
       border-radius: 16rpx;
     }
+  }
+  .icon-list .iconfont {
+    color: #999;
+    margin-left: 32rpx;
+    font-size: 24rpx;
   }
 }
