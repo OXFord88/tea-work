@@ -20,9 +20,9 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面显示
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     // setTimeout(() => {
     //   console.log(app.globalData.userInfo, 'aaa')
     //   // const user = app.globalData.userInfo;
@@ -32,13 +32,18 @@ Page({
     //   })
     //   console.log(this.data.userInfo)
     // }, 1000)
+    // this.setData({
+    //   userInfo: app.globalData.userInfo
+    // })
+    // console.log(this.data.userInfo, '----this.userInfo-----')
     let para1 = {
-      userid: app.globalData.userid || 8,
-      touserid: 8
+      userid: app.globalData.userInfo.userid,
+      touserid: app.globalData.userInfo.userid
     }
     let that = this
     checkUserMessage(para1).then(data => {
       if (data.data.code === '0000') {
+        console.log(data)
         that.setData({
           userInfo: data.data.data
         })
@@ -51,14 +56,15 @@ Page({
     //   duration: 2000
     // })
   },
+  // 获取用户发表此刻接口
   getDiaryList() {
     let para = {
-      userid: 9,
+      userid: this.data.userInfo.userid,
       page: 1,
-      pagesize: 4
+      pagesize: 10
     }
     checkUserTime(para).then(data => {
-      console.log(data)
+      console.log(data,'===用户此刻=====')
       const res = data.data
       if (res.code === '0000') {
         res.data.map(item => {
@@ -127,20 +133,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    setTimeout(() => {
-      console.log(app.globalData.userInfo, 'aaa')
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-      console.log(this.data.userInfo)
-    }, 200)
+    console.log(1)
   
   },
 

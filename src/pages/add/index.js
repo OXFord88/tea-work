@@ -74,6 +74,7 @@ Page({
     })
   },
   pushtime: function () {
+    console.log(app.globalData, '============')
     const userInfo = app.globalData.userInfo;
     console.log(userInfo)
     const para = {
@@ -88,6 +89,9 @@ Page({
       if (data.data.code === '0000') {
         wx.showToast({
           title: '发布信息成功！'
+        })
+        wx.switchTab({
+          url: '../user/index'
         })
       }else{
         wx.showToast({

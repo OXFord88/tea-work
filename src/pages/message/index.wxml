@@ -7,33 +7,12 @@
     <text id="send" class="{{isSend && 'active'}}" bindtap="toggleTab">发出的纸条</text>
   </view>
   <view class="message-info">
-    <view class="message-title" wx:if="{{isGet}}">
-      <view class="new-msg-num">{{num}} 张新纸条</view>
-      <view>
-        <text>我的收藏</text>
-        <text class="ml20">全部标为已读</text>
-      </view>
+    <view class="message-title" wx:if="{{isDuihua}}">
+        <view>对话</view>
     </view>
     <view class="message-list">
-      <view class="getPapeList" wx:if="{{isGet}}">
-          <view wx:for="{{pageLists}}" wx:key="index" class="">
-            <view class="col999 disflex">
-              <view>
-                <text class="{{item.isNew && 'is-new'}}">{{item.time}} </text>
-              </view>
-              <text class="iconfont icon-xin {{item.isZan ? 'zan' : ''}}"></text>
-            </view>
-            <view class="content">
-              <view>{{item.content}}</view>
-            </view>
-            <view class="disflex">
-                <view class="colblue">查看源此刻 ></view>
-                <view class="textRight">
-                  <text class="col999">From</text>
-                  <text class="colblue"> {{item.name}}</text>
-                </view>
-            </view>
-          </view>
+      <view class="getPapeList" wx:if="{{isLike}}">
+          <view>喜欢</view>
       </view>
       <view class="getPapeList" wx:if="{{isSend}}">
         <view wx:for="{{pageLists}}" wx:key="index" class="">

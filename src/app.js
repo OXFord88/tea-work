@@ -59,7 +59,7 @@ App({
   update: function(para, mes) {
     const that = this;
     wxUpdate(para).then( data => {
-      console.log(data)
+      console.log(data, '-------')
       if (data.statusCode < 300) {
         // 成功
         that.globalData.userInfo = {...mes, ...data.data.data, token: data.data.token}

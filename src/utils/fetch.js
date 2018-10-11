@@ -151,7 +151,7 @@ export const reportContent = (data, query = {}) => {
   content: 日刻内容 500
 */
 export const releaseTime = (data, query = {}) => {
-  return post(`${HOST}/diary/publishDiaryInfo?userid=${data.userid}&tags=${data.tags}&content=${data.content}`, {}, {})
+  return post(`${HOST}/diary/publishDiaryInfo?userid=${data.userid}&tags=${data.tags}&content=${data.content}${tokenUrl(true)}`, {}, {})
 }
 
 
@@ -339,7 +339,7 @@ export const checkPaperRemind = (data, query = {}) => {
   pagesize：每页显示条数
 */
 export const checkMyPaper = (data, query = {}) => {
-  return post(`${HOST}/comment/selectByCommentsByReceiveList?userid=${data.userid}&isFaverite=${data.isFaverite}&page=${data.page}&pagesize=${data.pagesize}`, {}, {})
+  return post(`${HOST}/comment/selectByCommentsByReceiveList?userid=${data.userid}&isFaverite=${data.isFaverite}&page=${data.page}&pagesize=${data.pagesize}${tokenUrl(url)}`, {}, {})
 }
 
 

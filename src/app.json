@@ -30,6 +30,7 @@
       {
         "pagePath": "pages/add/index",
         "iconPath": "images/add.png",
+        "text": "add",
         "selectedIconPath": "images/add.png"
       },
       {

@@ -22,7 +22,8 @@ Page({
     this.setData({
       test: 'hello oxford'
     })
-    console.log(app.globalData, '---===')
+    // 查找globalData
+    // console.log(app.globalData, '---===')
     wx.setTabBarBadge({
       index: 0,
       text: ''
@@ -33,14 +34,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(app.globalData, '---===')
   },
   toPageMessage() {
     console.log('click')
